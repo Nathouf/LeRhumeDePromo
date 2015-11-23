@@ -48,7 +48,7 @@ public class Plateau {
         for(int i=0;i<tabEtudiant.length;i++){
             for(int j=0;j<tabEtudiant[0].length;j++){
                 int nbVoisins = compteurVoisins(i,j);
-                tabEtudiant[i][j].setEtat(nbVoisins);
+                tabEtudiant[i][j].setEtat(nbVoisins, timer);
             }
         }
         

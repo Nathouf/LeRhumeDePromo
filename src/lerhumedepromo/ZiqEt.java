@@ -13,7 +13,7 @@ public class ZiqEt extends Etudiant{
             int nombreAleatoire = (int) ( Math.random() * 2 + 1);
             int timer = getTimer();
             if((timer>10)&&(timer<17)){
-                if(nombreAleatoire == 1){//if egal à 1 alors blessure sinon rien
+                if(nombreAleatoire == 1){//if egal à 1 alors ils vont au wei
                 this.weiZiqEt=true;
                 } 
         

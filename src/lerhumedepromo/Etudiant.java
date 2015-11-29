@@ -11,7 +11,7 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
     private boolean wei;
     private boolean ppJanvier;
     private boolean vingtQuatreHeures;
-    private int timer;//pour utiliser dans SportEt
+    private int timer;//pour utiliser dans les filières
     //constucteur
     public Etudiant(int filiere ,int fragilite,int sociabilité, boolean wei, boolean ppJanvier, boolean vingtQuatreHeures){
         this.etat=false;
@@ -33,7 +33,7 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
        }
    }
    
-   public int getTimer(){// pour me donner timer pour utiliser pour SportEt
+   public int getTimer(){// pour me donner timer pour utiliser dans les filières
        return timer;
    }
    

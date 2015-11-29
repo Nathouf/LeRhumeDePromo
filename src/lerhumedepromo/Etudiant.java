@@ -69,7 +69,7 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
 	   
 	   //coefficient à modifier s'ils sont trop importants
 	   //idée formule 0,5*C1 + 0,8*C2 + 0,2*C3 + C4*0,6 + 0,5*C5
-	   if((C1 + C2 + C3 + C4 + C5) >= 20){
+	   if((C1 + C2 + C3 + C4 + C5) >= 30){
 		   this.incubation = true;
 	   }
 	  

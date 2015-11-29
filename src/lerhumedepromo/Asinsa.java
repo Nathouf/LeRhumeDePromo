@@ -6,3 +6,4 @@ public class Asinsa extends Etudiant{
 		super(3,10,1,true,false,false);
 		}
 }
+//sdsdgsdg

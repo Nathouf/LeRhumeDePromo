@@ -9,6 +9,8 @@ public class Plateau {
         tabEtudiant = new Etudiant[hauteur][longueur];
         timer = 1;
     }
+    
+
 
     public void generationTableau() {
         for (int i = 0; i < tabEtudiant.length; i++) {
@@ -43,6 +45,7 @@ public class Plateau {
     public void setTimer() {
         timer++;
     }
+    
 
     public void leTour() {
         for (int i = 0; i < tabEtudiant.length; i++) {

@@ -11,6 +11,7 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
     private boolean wei;
     private boolean ppJanvier;
     private boolean vingtQuatreHeures;
+    private int timer;//pour utiliser dans SportEt
     //constucteur
     public Etudiant(int filiere ,int fragilite,int sociabilité, boolean wei, boolean ppJanvier, boolean vingtQuatreHeures){
         this.etat=false;
@@ -24,12 +25,18 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
     }
     
    public void setEtat(int nbVoisins, int timer){
+       this.timer = timer;//intialisation de timer
        if(etat=true || nbVoisins ==0){//l'étudiant est déja malade ou personne n'est malade autours de lui
        //ne rien faire  
        } else {
            setIncubation(nbVoisins,timer);
        }
    }
+   
+   public int getTimer(){// pour me donner timer pour utiliser pour SportEt
+       return timer;
+   }
+   
   public void setIncubation(int nbVoisins,int timer){ //methode a completer 
        int C1=fragilite+sociabilite;
        int C2=0; //les constantes C2,C3,C4 vont augmenter si l'etudiant participe aux differnts evenements

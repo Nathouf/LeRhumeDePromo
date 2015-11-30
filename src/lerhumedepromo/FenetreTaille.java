@@ -56,5 +56,8 @@ public class FenetreTaille extends JFrame{
 	public void masquerFenetre(){
 		setVisible(false);
 	}
+        public void setLabelConsigne(){
+        
+        }
     
 }

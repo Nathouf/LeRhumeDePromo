@@ -16,7 +16,7 @@ import java.awt.event.*;
 
 public class EcouteurTour implements ActionListener{
     
-    private MaFenetreDeJeu FenetreJeu;
+    private FenetreJeu FenetreJeu;
     
     public EcouteurTour(FenetreJeu fenetreDeJeu){
         

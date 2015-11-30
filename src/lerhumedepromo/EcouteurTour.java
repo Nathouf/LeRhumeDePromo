@@ -24,6 +24,6 @@ public class EcouteurTour implements ActionListener{
     }
     
     	public void actionPerformed(ActionEvent ae){
-
+       FenetreJeu.actualiserTour();
     
 }

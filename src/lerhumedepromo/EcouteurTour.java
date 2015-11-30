@@ -9,6 +9,21 @@ package lerhumedepromo;
  *
  * @author Nath
  */
-public class EcouteurTour {
+ 
+ import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class EcouteurTour implements ActionListener{
+    
+    private MaFenetreDeJeu FenetreJeu;
+    
+    public EcouteurTour(FenetreJeu fenetreDeJeu){
+        
+        
+    }
+    
+    	public void actionPerformed(ActionEvent ae){
+
     
 }

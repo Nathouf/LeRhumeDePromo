@@ -6,7 +6,7 @@ public class Plateau {
     private int timer;
 
     public Plateau(int hauteur, int longueur) {
-        tabEtudiant = new Etudiant[hauteur][longueur];
+                tabEtudiant = new Etudiant[hauteur][longueur];
         timer = 1;
     }
     

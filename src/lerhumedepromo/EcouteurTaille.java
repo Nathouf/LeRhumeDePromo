@@ -13,7 +13,13 @@ public class EcouteurTaille {
     public void actionPerformed(ActionEvent ae){
         int x=fen.getLongueur();
         int y=fen.getLargeur();//hauteur
+        if(x<=2 || y<=2){
+            fen.setLabelErreur();
+        } else {
         Plateau plateauJeu = new Plateau(y,x);
-        FenetreJeu fenJeu = new FenetreJeu(plateauJeu, x , y );
+        fen.masquerFenetre();
+        
+       // FenetreJeu fenJeu = new FenetreJeu(plateauJeu, x , y );
+        }
     }
 }

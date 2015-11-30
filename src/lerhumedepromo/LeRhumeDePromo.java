@@ -16,6 +16,7 @@ public class LeRhumeDePromo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        FenetreTaille fen= new FenetreTaille();
     }
     //bwaaah
 }

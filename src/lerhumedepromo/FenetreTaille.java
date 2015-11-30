@@ -18,7 +18,7 @@ public class FenetreTaille {
 	private JButton creerPlateau;
 	
 	public FenetreTaille(){
-		super("Taille de ");
+		super("Taille de plateau");
 			
 			//Instanciations 
 		largeur = new JTextField("10",4);
@@ -50,7 +50,8 @@ public class FenetreTaille {
             return Integer.parseInt(longueur.getText());	}
 	
 	public int getLargeur(){
-            return Integer.parseInt(largeur.getText());	}
+            return Integer.parseInt(largeur.getText());
+        }
 	
 	public void masquerFenetre(){
 		setVisible(false);

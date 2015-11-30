@@ -8,7 +8,7 @@ import javax.swing.*;//utilisation de Widgets
 import java.awt.*; // Utilisation d'habillages
 import java.awt.event.*;
 
-public class FenetreTaille extends JFrame{
+public class FenetreTaille {
     private JTextField largeur;
 	private JTextField longueur;
 	private JLabel consigne;
@@ -18,7 +18,7 @@ public class FenetreTaille extends JFrame{
 	private JButton creerPlateau;
 	
 	public FenetreTaille(){
-		super("Taille de plateau ");
+		super("Taille de ");
 			
 			//Instanciations 
 		largeur = new JTextField("10",4);
@@ -47,13 +47,10 @@ public class FenetreTaille extends JFrame{
 	}
 	
 	public int getLongueur(){
-		return Integer.parseInt(longueur.getText());
-	}
+            return Integer.parseInt(longueur.getText());	}
 	
 	public int getLargeur(){
-		return Integer.parseInt(largeur.getText());;
-	}
-	
+            return Integer.parseInt(largeur.getText());	}
 	
 	public void masquerFenetre(){
 		setVisible(false);

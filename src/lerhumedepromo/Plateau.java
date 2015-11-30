@@ -3,7 +3,7 @@ package lerhumedepromo;
 public class Plateau {
 
     private Etudiant[][] tabEtudiant;
-    private int timer;
+    public int timer;
 
     public Plateau(int hauteur, int longueur) {
         tabEtudiant = new Etudiant[hauteur][longueur];

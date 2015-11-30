@@ -8,8 +8,10 @@ import javax.swing.*;//utilisation de Widgets
 import java.awt.*; // Utilisation d'habillages
 import java.awt.event.*;
 
-public class FenetreTaille extends JFrame{
-    private JTextField largeur;
+
+public class FenetreTaille extends JFrame {
+	
+	private JTextField largeur;
 	private JTextField longueur;
 	private JLabel consigne;
 	private JLabel nombreEtudiantsHorizontal;
@@ -21,24 +23,28 @@ public class FenetreTaille extends JFrame{
 		super("Taille de plateau");
 			
 			//Instanciations 
-		largeur = new JTextField("10",4);
-		longueur = new JTextField("10", 4);
+		largeur = new JTextField("2",4);
+		longueur = new JTextField("2", 4);
 		consigne = new JLabel("Sélectionner une taille de plateau");
-		nombreEtudiantsHorizontal = new JLabel("Nombre étudiants par ligne");
-		nombreEtudiantsVertical = new JLabel("Nombre étudiants par colonne");
-		messageErreur = new JLabel("Veuillez recommencer, cela n'a pas fonctionné!");
+		nombreEtudiantsHorizontal = new JLabel("Nombre étudiants par ligne (min 2)");
+		nombreEtudiantsVertical = new JLabel("Nombre étudiants par colonne (min 2)");
+		messageErreur = new JLabel();
 		creerPlateau = new JButton("Créer");
 		
 			//Structure
 		JPanel cadrePrincipal = new JPanel();
+		JPanel tableauCommande = new JPanel();
 		
-		cadrePrincipal.add(consigne);
-		cadrePrincipal.add(nombreEtudiantsVertical);
-		cadrePrincipal.add(largeur); //hauteur
-		cadrePrincipal.add(nombreEtudiantsHorizontal);
-		cadrePrincipal.add(longueur);
-		cadrePrincipal.add(creerPlateau);
-		cadrePrincipal.add(messageErreur);
+		cadrePrincipal.setLayout(new BorderLayout());
+		tableauCommande.setLayout(new BorderLayout());
+		
+		tableauCommande.add(nombreEtudiantsVertical, BorderLayout.NORTH);
+		tableauCommande.add(largeur, BorderLayout.NORTH); //hauteur
+		tableauCommande.add(nombreEtudiantsHorizontal, BorderLayout.CENTER);
+		tableauCommande.add(longueur, BorderLayout.CENTER);
+		tableauCommande.add(creerPlateau, BorderLayout.SOUTH);
+		
+		cadrePrincipal.add(consigne, BorderLayout.SOUTH);
 		
 		setContentPane(cadrePrincipal);
 		setSize(600,400);
@@ -47,17 +53,34 @@ public class FenetreTaille extends JFrame{
 	}
 	
 	public int getLongueur(){
-            return Integer.parseInt(longueur.getText());	}
+		 int x = 0;
+		//verifie si input est bien un int
+		try{
+			x = Integer.parseInt(longueur.getText());
+		}
+		catch(Exception e){ 
+			x = -1; //symbolise l'erreur	
+		} 
+		return x; 
+	}
 	
 	public int getLargeur(){
-            return Integer.parseInt(largeur.getText());
-        }
+		int y= 0;
+		try{
+			y = Integer.parseInt(largeur.getText());
+		}
+		catch(Exception e){ 
+			y = -1; //symbolise l'erreur	
+		} 
+		return y; 
+	}
 	
 	public void masquerFenetre(){
 		setVisible(false);
 	}
-        public void setLabelConsigne(){
+	
+	public void setLabelErreur(){
+		messageErreur.setText("Veuillez rentrer quelque chose de valide");
         
-        }
-    
+    }
 }

@@ -13,7 +13,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class EcouteurPremierMalade implements Action Listener {
+public class EcouteurPremierMalade implements MouseListener {
     
     private MaFenetreJeu FenetreJeu;
     
@@ -21,4 +21,15 @@ public class EcouteurPremierMalade implements Action Listener {
 		
 		
 		}
+		
+		public void mouseEntered(MouseEvent e){}
+		
+		public void mouseReleased(MouseEvent e){}
+		
+		public void mousePressed(MouseEvent e){}
+		
+		public void mouseClicked(MouseEvent e){}
+		
+		public void mouseExited(MouseEvent e){}
+		
 }

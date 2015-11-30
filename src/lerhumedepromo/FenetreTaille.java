@@ -47,12 +47,13 @@ public class FenetreTaille extends JFrame{
 	}
 	
 	public int getLongueur(){
-		return longueur;
+		return Integer.parseInt(longueur.getText());
 	}
 	
 	public int getLargeur(){
-		return largeur;
+		return Integer.parseInt(largeur.getText());;
 	}
+	
 	
 	public void masquerFenetre(){
 		setVisible(false);

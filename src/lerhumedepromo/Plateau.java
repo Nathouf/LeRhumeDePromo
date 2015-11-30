@@ -2,8 +2,8 @@ package lerhumedepromo;
 
 public class Plateau {
 
-    private Etudiant[][] tabEtudiant;
-    public int timer;
+    public Etudiant[][] tabEtudiant; //on met en public pour y acceder plus facilement dans les autres classes
+    public int timer;               //on met en public pour y acceder plus facilement dans les autres classes
 
     public Plateau(int hauteur, int longueur) {
                 tabEtudiant = new Etudiant[hauteur][longueur];

@@ -34,6 +34,8 @@ public class FenetreJeu extends JFrame{
 		zoneDeDessin = new JPanel(); //zone qui contient le quadriage (au centre)		
 		panelDeCommande.add(labelTimer); 
 		panelDeCommande.add(passerTour);
+                
+                passerTour.addActionListener(new EcouteurTour(this));//addition d'action au button
 		
 		cadrePrincipal.add(zoneDeDessin,BorderLayout.CENTER);
 		cadrePrincipal.add(panelDeCommande,BorderLayout.NORTH);

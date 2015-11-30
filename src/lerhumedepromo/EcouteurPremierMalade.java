@@ -15,7 +15,7 @@ import java.awt.event.*;
 
 public class EcouteurPremierMalade implements MouseListener {
     
-    private MaFenetreJeu FenetreJeu;
+    private FenetreJeu FenetreJeu;
     private int posMaladeX;
     private int posMaladeY;
 

@@ -4,7 +4,7 @@ import java.awt.event.*;
 
 
 
-public class EcouteurTaille {
+public class EcouteurTaille implements ActionListener{
     private FenetreTaille fen;
     
     public EcouteurTaille(FenetreTaille fen){
@@ -19,7 +19,7 @@ public class EcouteurTaille {
         Plateau plateauJeu = new Plateau(y,x);
         fen.masquerFenetre();
         
-       // FenetreJeu fenJeu = new FenetreJeu(plateauJeu, x , y );
+        FenetreJeu fenJeu = new FenetreJeu(plateauJeu, x , y );
         }
     }
 }

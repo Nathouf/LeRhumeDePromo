@@ -8,7 +8,7 @@ import javax.swing.*;//utilisation de Widgets
 import java.awt.*; // Utilisation d'habillages
 import java.awt.event.*;
 
-public class FenetreTaille {
+public class FenetreTaille extends JFrame{
     private JTextField largeur;
 	private JTextField longueur;
 	private JLabel consigne;

@@ -33,6 +33,14 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
        }
    }
    
+   public boolean getEtat(){//pour donner l'etat pour utiliser dans paint component
+       return etat;
+   }
+   
+   public int getFiliere(){//nous donne int de filière pour utiliser dans paint component pour créer les couleurs
+       return filiere;
+   }
+   
    public int getTimer(){// pour me donner timer pour utiliser dans les filières
        return timer;
    }

@@ -7,6 +7,8 @@ package lerhumedepromo;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.Graphics;
+
 /**
  *
  * @author Nath
@@ -19,6 +21,7 @@ public class FenetreJeu extends JFrame{
 	int nombreIconesx;
 	int nombreIconesy;
 	
+        
 	public FenetreJeu(Plateau plateau, int nbreIconesx, int nbreIconesy){
 		super("Fenêtre de jeu");
 		JPanel cadrePrincipal = new JPanel(new BorderLayout()); //cadre principal de la fenêtre qui contiendra tout
@@ -67,9 +70,33 @@ public class FenetreJeu extends JFrame{
 	}
 	
 	protected void paintComponent(Graphics g) { // A COMPLETER, PB DE COULEUR DES CASES EN FONCTIOBNS DES FILIERES
-       /* for(int lig=0 ; lig <nombreIconesx ; lig++) {
-            for(int col=0 ; col <nombreIconesy ; col++) {
+            super.paintComponent(g);
+
+            for(int lig=0 ; lig <nombreIconesx ; lig++) {
+                for(int col=0 ; col <nombreIconesy ; col++) {
+            
+            
+                    if(tabEtudiant[lig][col].getEtat()){//si etat true(donc si malade) il devient rouge
+                        g.setColor(Color.rouge);            }//sinon on regarde les autres
+                    else if(tabEtudiant[lig][col].getFiliere()==1){//d'abord on prend le filiere on fait if pour 
+                        g.setColor(Color.orange);            }//trouver les filieres et on leur assigne une couleur
+                    else if(tabEtudiant[lig][col].getFiliere()==2){//puis le fillRect dois donner la couleur qui correspond
+                        g.setColor(Color.white);            }//si tout se passe bien
+                    else if(tabEtudiant[lig][col].getFiliere()==3){
+                        g.setColor(Color.yellow);            }
+                    else if(tabEtudiant[lig][col].getFiliere()==4){
+                        g.setColor(Color.green);            }
+                    else if(tabEtudiant[lig][col].getFiliere()==5){
+                        g.setColor(Color.blue);            }
+                    else if(tabEtudiant[lig][col].getFiliere()==6){
+                        g.setColor(Color.purple);            }
+                        }
                     g.fillRect((int)(col*l),(int)(lig*h),(int)l,(int)h);
+               }
+            
+
+            
+           
   
             }
         }*/

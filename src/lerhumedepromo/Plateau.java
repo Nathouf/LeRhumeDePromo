@@ -46,6 +46,7 @@ public class Plateau {
         timer++;
     }
     
+    
 
     public void leTour() {
         for (int i = 0; i < tabEtudiant.length; i++) {

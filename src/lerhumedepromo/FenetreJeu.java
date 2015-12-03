@@ -77,7 +77,7 @@ public class FenetreJeu extends JFrame{
             
             
                     if(monPlateau.tabEtudiant[lig][col].getEtat()){//si etat true(donc si malade) il devient rouge
-                        g.setColor(Color.rouge);            }//sinon on regarde les autres
+                        g.setColor(Color.red);            }//sinon on regarde les autres
                     else if(monPlateau.tabEtudiant[lig][col].getFiliere()==1){//d'abord on prend le filiere on fait if pour 
                         g.setColor(Color.orange);            }//trouver les filieres et on leur assigne une couleur
                     else if(monPlateau.tabEtudiant[lig][col].getFiliere()==2){//puis le fillRect dois donner la couleur qui correspond
@@ -89,7 +89,7 @@ public class FenetreJeu extends JFrame{
                     else if(monPlateau.tabEtudiant[lig][col].getFiliere()==5){
                         g.setColor(Color.blue);            }
                     else if(monPlateau.tabEtudiant[lig][col].getFiliere()==6){
-                        g.setColor(Color.purple);            }
+                        g.setColor(Color.black);            }
                         }
                     g.fillRect((int)(col*l),(int)(lig*h),(int)l,(int)h);
                }

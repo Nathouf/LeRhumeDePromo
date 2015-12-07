@@ -90,8 +90,10 @@ public class FenetreJeu extends JFrame{
                         g.setColor(Color.blue);            }
                     else if(monPlateau.tabEtudiant[lig][col].getFiliere()==6){
                         g.setColor(Color.black);            }
+                    
+                    g.fillRect(col*getSizeIconeX(),lig*getSizeIconeY(),getSizeIconeX(),getSizeIconeY());
+
                         }
-                    g.fillRect((int)(col*l),(int)(lig*h),(int)l,(int)h);
                }
             
 
@@ -100,7 +102,7 @@ public class FenetreJeu extends JFrame{
   
             }
         }
-	}
+	
 	
 	public void actualiserTour(){
 		monPlateau.timer++;  //le timer augmente de 1, on passe à la semaine suivante

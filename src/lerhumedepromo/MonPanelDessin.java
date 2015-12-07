@@ -9,8 +9,8 @@ import java.awt.Graphics;
 public class MonPanelDessin extends JPanel {
 	
 	private FenetreJeu fenJeu;
-	private int nbIconesX;
-	private int nbIconesY;
+	private int nbIconesx;
+	private int nbIconesy;
 
 public MonPanelDessin(FenetreJeu fen){
 fenJeu=fen;
@@ -27,22 +27,22 @@ nbIconesy = fenJeu.nombreIconesy;
                 for(int col=0 ; col <nbIconesy ; col++) {
             
             
-                    if(monPlateau.tabEtudiant[lig][col].getEtat()){//si etat true(donc si malade) il devient rouge
+                    if(fenJeu.monPlateau.tabEtudiant[lig][col].getEtat()){//si etat true(donc si malade) il devient rouge
                         g.setColor(Color.red);            }//sinon on regarde les autres
-                    else if(monPlateau.tabEtudiant[lig][col].getFiliere()==1){//d'abord on prend le filiere on fait if pour 
+                    else if(fenJeu.monPlateau.tabEtudiant[lig][col].getFiliere()==1){//d'abord on prend le filiere on fait if pour 
                         g.setColor(Color.orange);            }//trouver les filieres et on leur assigne une couleur
-                    else if(monPlateau.tabEtudiant[lig][col].getFiliere()==2){//puis le fillRect dois donner la couleur qui correspond
+                    else if(fenJeu.monPlateau.tabEtudiant[lig][col].getFiliere()==2){//puis le fillRect dois donner la couleur qui correspond
                         g.setColor(Color.white);            }//si tout se passe bien
-                    else if(monPlateau.tabEtudiant[lig][col].getFiliere()==3){
+                    else if(fenJeu.monPlateau.tabEtudiant[lig][col].getFiliere()==3){
                         g.setColor(Color.yellow);            }
-                    else if(monPlateau.tabEtudiant[lig][col].getFiliere()==4){
+                    else if(fenJeu.monPlateau.tabEtudiant[lig][col].getFiliere()==4){
                         g.setColor(Color.green);            }
-                    else if(monPlateau.tabEtudiant[lig][col].getFiliere()==5){
+                    else if(fenJeu.monPlateau.tabEtudiant[lig][col].getFiliere()==5){
                         g.setColor(Color.blue);            }
-                    else if(monPlateau.tabEtudiant[lig][col].getFiliere()==6){
+                    else if(fenJeu.monPlateau.tabEtudiant[lig][col].getFiliere()==6){
                         g.setColor(Color.black);            }
                     
-                    g.fillRect(col*fenJeu.getSizeIconeX(),lig*fenJeu.getSizeIconeY(),getSizeIconeX(),getSizeIconeY());
+                    g.fillRect(col*fenJeu.getSizeIconeX(),lig*fenJeu.getSizeIconeY(),fenJeu.getSizeIconeX(),fenJeu.getSizeIconeY());
 
                         }
                }
@@ -53,14 +53,3 @@ nbIconesy = fenJeu.nombreIconesy;
   
             }
         }
-  
- } 
-
-
-
-
-
-
-
-
-}

@@ -8,11 +8,11 @@ import java.awt.Graphics;
 
 public class MonPanelDessin extends JPanel {
 	
-	private Jframe fenJeu;
+	private FenetreJeu fenJeu;
 	private int nbIconesX;
 	private int nbIconesY;
 
-public MonPanelDessin(JFrame fen){
+public MonPanelDessin(FenetreJeu fen){
 fenJeu=fen;
 nbIconesx = fenJeu.nombreIconesx;
 nbIconesy = fenJeu.nombreIconesy;

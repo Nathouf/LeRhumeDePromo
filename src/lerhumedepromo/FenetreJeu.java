@@ -14,12 +14,12 @@ import java.awt.Graphics;
  * @author Nath
  */
 public class FenetreJeu extends JFrame{
-    	private Plateau monPlateau;
+    	public Plateau monPlateau;
 	private JLabel labelTimer;
 	private JButton passerTour;
 	private JPanel zoneDeDessin;
-	int nombreIconesx;
-	int nombreIconesy;
+	public int nombreIconesx;
+	public int nombreIconesy;
 	
         
 	public FenetreJeu(Plateau plateau, int nbreIconesx, int nbreIconesy){

@@ -1,7 +1,10 @@
+package lerhumedepromo;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.Graphics;
+
+
 
 public class MonPanelDessin extends JPanel {
 	

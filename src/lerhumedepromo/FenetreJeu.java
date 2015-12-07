@@ -34,9 +34,7 @@ public class FenetreJeu extends JFrame{
 		labelTimer = new JLabel("Semaine 1");
 		passerTour = new JButton("Passer tour");
 		monPlateau = new Plateau(nombreIconesx,nombreIconesy); //création d'un plateau de la taille définie pare l'utilisateur via l'écouteur "EcouteurTaille"
-		zoneDeDessin = new JPanel(); //zone qui contient le quadriage (au centre)		
-		panelDeCommande.add(labelTimer); 
-		panelDeCommande.add(passerTour);
+		zoneDeDessin = new JPanel(); //zone qui contient le quadriage (au centre)	
                 
                 passerTour.addActionListener(new EcouteurTour(this));//addition d'action au button
 		
@@ -109,7 +107,7 @@ public class FenetreJeu extends JFrame{
 		monPlateau.leTour();
 	}
 	
-	public String messageFinDePartie(){ //A COMPLETER
+	public String messageFinDePartie(){ 
 		String message="";
 		if(monPlateau.finPartie()){
 			message=message+"Vous avez perdu, vous n'avez pas infecté tous les étudiants!";
@@ -117,5 +115,12 @@ public class FenetreJeu extends JFrame{
 		return message;
 	}
 	
+	public void DepartJeu(){
+		 
+		 monPanelDessin.addActionListener(null);//pour qu'on ne choississe qu'une fois le premier malade
+		 panelDeCommande.add(labelTimer); //on ajoute les caractéristiques du jeu
+		 panelDeCommande.add(passerTour);
+		 consignePremierMalade.setText("");// la consigne initiale ne s'affiche plus 
+	}
     
 }

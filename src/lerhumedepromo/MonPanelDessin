@@ -6,10 +6,13 @@ import java.awt.Graphics;
 public class MonPanelDessin extends JPanel {
 	
 	private Jframe fenJeu;
-	private int 
+	private int nbIconesX;
+	private int nbIconesY;
 
-public MonPanelDessin(){
-
+public MonPanelDessin(JFrame fen){
+fenJeu=fen;
+nbIconesx = fenJeu.nombreIconesx;
+nbIconesy = fenJeu.nombreIconesy;
 }
 	
 
@@ -17,8 +20,8 @@ public MonPanelDessin(){
 	protected void paintComponent(Graphics g) { // A COMPLETER, PB DE COULEUR DES CASES EN FONCTIOBNS DES FILIERES
             super.paintComponent(g);
 
-            for(int lig=0 ; lig <nombreIconesx ; lig++) {
-                for(int col=0 ; col <nombreIconesy ; col++) {
+            for(int lig=0 ; lig <nbIconesx ; lig++) {
+                for(int col=0 ; col <nbIconesy ; col++) {
             
             
                     if(monPlateau.tabEtudiant[lig][col].getEtat()){//si etat true(donc si malade) il devient rouge
@@ -36,7 +39,7 @@ public MonPanelDessin(){
                     else if(monPlateau.tabEtudiant[lig][col].getFiliere()==6){
                         g.setColor(Color.black);            }
                     
-                    g.fillRect(col*getSizeIconeX(),lig*getSizeIconeY(),getSizeIconeX(),getSizeIconeY());
+                    g.fillRect(col*fenJeu.getSizeIconeX(),lig*fenJeu.getSizeIconeY(),getSizeIconeX(),getSizeIconeY());
 
                         }
                }

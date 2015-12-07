@@ -69,7 +69,7 @@ public class FenetreJeu extends JFrame{
 		monPlateau.tabEtudiant[x][y].etat=true;
 	}
 	
-	protected void paintComponent(Graphics g) { // A COMPLETER, PB DE COULEUR DES CASES EN FONCTIOBNS DES FILIERES
+	protected void paintComponent(Graphics g) {
             super.paintComponent(g);
 
             for(int lig=0 ; lig <nombreIconesx ; lig++) {
@@ -111,10 +111,9 @@ public class FenetreJeu extends JFrame{
 	
 	public String messageFinDePartie(){ //A COMPLETER
 		String message="";
-		/*for(int i=0, i<nombreIconesx, i++){
-			for(int j=0, j<nombreIconesy, j++){
-			}
-		}*/
+		if(monPlateau.finPartie()){
+			message=message+"Vous avez perdu, vous n'avez pas infecté tous les étudiants!";
+		}
 		return message;
 	}
 	

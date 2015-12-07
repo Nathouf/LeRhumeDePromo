@@ -20,6 +20,7 @@ public class FenetreJeu extends JFrame{
 	private JPanel zoneDeDessin;
 	public int nombreIconesx;
 	public int nombreIconesy;
+	private MonPanelDessin monPanelDessin;
 	
         
 	public FenetreJeu(Plateau plateau, int nbreIconesx, int nbreIconesy){
@@ -35,12 +36,14 @@ public class FenetreJeu extends JFrame{
 		passerTour = new JButton("Passer tour");
 		monPlateau = new Plateau(nombreIconesx,nombreIconesy); //création d'un plateau de la taille définie pare l'utilisateur via l'écouteur "EcouteurTaille"
 		zoneDeDessin = new JPanel(); //zone qui contient le quadriage (au centre)	
-                
+                monPanelDessin = new MonPanelDessin(this);
                 passerTour.addActionListener(new EcouteurTour(this));//addition d'action au button
 		
 		cadrePrincipal.add(zoneDeDessin,BorderLayout.CENTER);
 		cadrePrincipal.add(panelDeCommande,BorderLayout.NORTH);
 		cadrePrincipal.add(zoneDeLegende,BorderLayout.EAST);
+		
+		monPanelDessin.repaint();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //la fenêtre se ferme quand on clique sur la x
 		setSize(600,400);

@@ -6,15 +6,18 @@ public class Plateau {
     public int timer;               //on met en public pour y acceder plus facilement dans les autres classes
 
     public Plateau(int hauteur, int longueur) {
-                tabEtudiant = new Etudiant[hauteur][longueur];
+        tabEtudiant = new Etudiant[hauteur][longueur];
         timer = 1;
+        this.generationTableau(); //la methode crée le tableau puis le génère aléatoirement
     }
     
 
 
     public void generationTableau() {
-        for (int i = 0; i < tabEtudiant.length; i++) {
-            for (int j = 0; j < tabEtudiant[0].length; j++) {
+        
+        
+        for (int i = 0; i < tabEtudiant[0].length; i++) {
+            for (int j = 0; j < tabEtudiant.length; j++) {
                 //on genere un entier aléatoire entre 1 et 6 pour choisir la filière
                 int nombreAleatoire = 1 + (int) (Math.random() * 6);
                 //on utilise switch case plutot qu'une horrible boucle if else
@@ -48,7 +51,7 @@ public class Plateau {
     
     
 
-    public void leTour() {
+    public void leTour() {//fait le tour du tableau deux fois : passe les incubés à la malade et appelle la methode setEtat qui détermine si un Etudiant devient incumbé
         for (int i = 0; i < tabEtudiant.length; i++) {
             for (int j = 0; j < tabEtudiant[0].length; j++) {
                 tabEtudiant[i][j].lesSymptomesApparaissent();

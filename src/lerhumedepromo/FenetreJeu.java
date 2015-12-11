@@ -25,18 +25,19 @@ public class FenetreJeu extends JFrame{
         
 	public FenetreJeu(Plateau plateau, int nbreIconesx, int nbreIconesy){
 		super("Fenêtre de jeu");
+                this.nombreIconesx = nbreIconesx; //nombre de colonnes  
+		this.nombreIconesy = nbreIconesy;  //nombre de lignes
+                monPanelDessin = new MonPanelDessin(this);
 		JPanel cadrePrincipal = new JPanel(new BorderLayout()); //cadre principal de la fenêtre qui contiendra tout
 		JPanel panelDeCommande = new JPanel(); //zone qui contient l'étiquette labelTimer et le bouton passerTour (en haut)
 		JPanel zoneDeLegende = new JPanel(); //zone qui contient la légende (à droite)
-		this.nombreIconesx = nbreIconesx; 
-		this.nombreIconesy = nbreIconesy;
+		
 	
 		//Instanciations
 		labelTimer = new JLabel("Semaine 1");
 		passerTour = new JButton("Passer tour");
 		monPlateau = new Plateau(nombreIconesx,nombreIconesy); //création d'un plateau de la taille définie pare l'utilisateur via l'écouteur "EcouteurTaille"
 		zoneDeDessin = new JPanel(); //zone qui contient le quadriage (au centre)	
-                monPanelDessin = new MonPanelDessin(this);
                 passerTour.addActionListener(new EcouteurTour(this));//addition d'action au button
 		
 		cadrePrincipal.add(zoneDeDessin,BorderLayout.CENTER);
@@ -70,39 +71,8 @@ public class FenetreJeu extends JFrame{
 		monPlateau.tabEtudiant[x][y].etat=true;
 	}
 	
-	protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
-
-            for(int lig=0 ; lig <nombreIconesx ; lig++) {
-                for(int col=0 ; col <nombreIconesy ; col++) {
-            
-            
-                    if(monPlateau.tabEtudiant[lig][col].getEtat()){//si etat true(donc si malade) il devient rouge
-                        g.setColor(Color.red);            }//sinon on regarde les autres
-                    else if(monPlateau.tabEtudiant[lig][col].getFiliere()==1){//d'abord on prend le filiere on fait if pour 
-                        g.setColor(Color.orange);            }//trouver les filieres et on leur assigne une couleur
-                    else if(monPlateau.tabEtudiant[lig][col].getFiliere()==2){//puis le fillRect dois donner la couleur qui correspond
-                        g.setColor(Color.white);            }//si tout se passe bien
-                    else if(monPlateau.tabEtudiant[lig][col].getFiliere()==3){
-                        g.setColor(Color.yellow);            }
-                    else if(monPlateau.tabEtudiant[lig][col].getFiliere()==4){
-                        g.setColor(Color.green);            }
-                    else if(monPlateau.tabEtudiant[lig][col].getFiliere()==5){
-                        g.setColor(Color.blue);            }
-                    else if(monPlateau.tabEtudiant[lig][col].getFiliere()==6){
-                        g.setColor(Color.black);            }
-                    
-                    g.fillRect(col*getSizeIconeX(),lig*getSizeIconeY(),getSizeIconeX(),getSizeIconeY());
-
-                        }
-               }
-            
-
-            
-           
-  
-            }
-        }
+	
+        
 	
 	
 	public void actualiserTour(){

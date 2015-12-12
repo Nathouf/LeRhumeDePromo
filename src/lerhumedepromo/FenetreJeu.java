@@ -72,8 +72,10 @@ public class FenetreJeu extends JFrame{
 	/*public void setPremierMalade(int x, int y)
 	à quoi servent les paramètres? coordonnées données pas mouseListener*/
 	public void setPremierMalade(){
-		
-		monPlateau.tabEtudiant[x][y].etat=true;
+		int x = ecoutPremierMalade.posMaladeX;//nous donne la position qu'il a récupérée
+		int y = ecoutPremierMalade.posMaladeY;
+
+		monPlateau.tabEtudiant[x][y].etat=true;//maintenant la la méthode paintComponent va le peidre rouge et c'est fini
 	}
 	
 	

@@ -31,7 +31,7 @@ public class FenetreJeu extends JFrame{
 		JPanel cadrePrincipal = new JPanel(new BorderLayout()); //cadre principal de la fenêtre qui contiendra tout
 		JPanel panelDeCommande = new JPanel(); //zone qui contient l'étiquette labelTimer et le bouton passerTour (en haut)
 		JPanel zoneDeLegende = new JPanel(); //zone qui contient la légende (à droite)
-		ecoutPremierMalade = new EcouteurPremierMalade(this);//instanciation
+		ecoutPremierMalade = new EcouteurPremierMalade(this);//instanciation,, pas nécessaire maintenant que j'y pense,, on verra
 	
 		//Instanciations
 		labelTimer = new JLabel("Semaine 1");
@@ -39,6 +39,8 @@ public class FenetreJeu extends JFrame{
 		monPlateau = new Plateau(nombreIconesx,nombreIconesy); //création d'un plateau de la taille définie pare l'utilisateur via l'écouteur "EcouteurTaille"
 		zoneDeDessin = new JPanel(); //zone qui contient le quadriage (au centre)	
                 passerTour.addActionListener(new EcouteurTour(this));//addition d'action au button
+                monPanelDessin.addMouseListener(ecoutPremierMalade);
+
 		
 		cadrePrincipal.add(zoneDeDessin,BorderLayout.CENTER);
 		cadrePrincipal.add(panelDeCommande,BorderLayout.NORTH);

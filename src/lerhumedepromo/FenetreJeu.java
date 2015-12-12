@@ -38,7 +38,7 @@ public class FenetreJeu extends JFrame{
 		passerTour = new JButton("Passer tour");
 		monPlateau = new Plateau(nombreIconesx,nombreIconesy); //création d'un plateau de la taille définie pare l'utilisateur via l'écouteur "EcouteurTaille"
 		zoneDeDessin = new JPanel(); //zone qui contient le quadriage (au centre)	
-                passerTour.addActionListener(new EcouteurTour(this));//addition d'action au button
+                passerTour.addActionListener(new EcouteurTour(this, monPanelDessin));//addition d'action au button,,changement car j'ai changé le constructeur pour qu'on mette repaint
                 monPanelDessin.addMouseListener(ecoutPremierMalade);
 
 		

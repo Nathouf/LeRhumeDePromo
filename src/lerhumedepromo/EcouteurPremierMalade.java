@@ -16,8 +16,8 @@ import java.awt.event.*;
 public class EcouteurPremierMalade implements MouseListener {
     
     private FenetreJeu FenetreJeu;
-    private int posMaladeX;
-    private int posMaladeY;
+    public int posMaladeX;
+    public int posMaladeY;
 
     
    /* public EcouteurPremierMalade(JPanel zoneDeDessin, int x, int y)
@@ -44,13 +44,13 @@ public class EcouteurPremierMalade implements MouseListener {
 			posMaladeY = e.getY();	
 			}
 			
-		public int getPosMaladeX(){//getter pour utiliser coord. dans les autres classes
+	/*	public int getPosMaladeX(){//getter pour utiliser coord. dans les autres classes
 			return posMaladeX;
-			}	
+			}*/	
 			
-		public int getPosMaladeY(){////getter pour utiliser coord. dans les autres classes
+	/*	public int getPosMaladeY(){////getter pour utiliser coord. dans les autres classes
 			return posMaladeY;
-			}			
+			}*/ //car j'ai mis les coordonnées en public			
 		
 		
 		

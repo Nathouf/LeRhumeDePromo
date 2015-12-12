@@ -20,8 +20,11 @@ public class EcouteurPremierMalade implements MouseListener {
     private int posMaladeY;
 
     
-    public EcouteurPremierMalade(JPanel zoneDeDessin, int x, int y){
-		
+   /* public EcouteurPremierMalade(JPanel zoneDeDessin, int x, int y)
+   paraît comme une grave erreur car c'est la fenetre qu'on veut qu'il trouve
+   De plus pas besoin de mettre x,y ici,, c'est ce qu'on veut qu'il nous donne*/
+    public EcouteurPremierMalade(FenetreJeu fen){
+		FenetreJeu = fen;
 		
 		}
 		//pour MouseListener si on met pas toutes les méthodes

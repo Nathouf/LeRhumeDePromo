@@ -26,7 +26,7 @@ public class EcouteurTour implements ActionListener{
     @Override
     	public void actionPerformed(ActionEvent e){
        FenetreJeu.actualiserTour();
-       FenetreJeu.repaint();
+       MonPanelDessin.repaint();
         }
 }
         

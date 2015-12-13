@@ -28,6 +28,7 @@ public class FenetreJeu extends JFrame{
 		super("Fenêtre de jeu");
                 this.nombreIconesx = nbreIconesx; //nombre de colonnes  
 		this.nombreIconesy = nbreIconesy;  //nombre de lignes
+                monPlateau = plateau;
                 monPanelDessin = new MonPanelDessin(this);
 		JPanel cadrePrincipal = new JPanel(new BorderLayout()); //cadre principal de la fenêtre qui contiendra tout
 		JPanel zoneDeLegende = new JPanel(); //zone qui contient la légende (à droite)
@@ -36,13 +37,13 @@ public class FenetreJeu extends JFrame{
 		//Instanciations
 		labelTimer = new JLabel("Semaine 1");
 		passerTour = new JButton("Passer tour");
-		monPlateau = new Plateau(nombreIconesx,nombreIconesy); //création d'un plateau de la taille définie pare l'utilisateur via l'écouteur "EcouteurTaille"
-		zoneDeDessin = new JPanel(); //zone qui contient le quadriage (au centre)	
+		 
+			
                 passerTour.addActionListener(new EcouteurTour(this, monPanelDessin));//addition d'action au button,,changement car j'ai changé le constructeur pour qu'on mette repaint
                 monPanelDessin.addMouseListener(ecoutPremierMalade);
 
 		
-		cadrePrincipal.add(zoneDeDessin,BorderLayout.CENTER);
+		cadrePrincipal.add(monPanelDessin,BorderLayout.CENTER);
 		cadrePrincipal.add(panelDeCommande,BorderLayout.NORTH);
 		cadrePrincipal.add(zoneDeLegende,BorderLayout.EAST);
 		
@@ -59,12 +60,12 @@ public class FenetreJeu extends JFrame{
 		labelTimer.setText("Semaine : "+monPlateau.timer); //on modifie l'étiquette du timer en fonction de la semaine
 	}
 	
-	public int getSizeIconeX(){
+	public int getSizeIconeX(){//desormais inutile
 		int l = (int)zoneDeDessin.getWidth();
 		return (int)(l/nombreIconesx); //renvoie la taille des colonnes
 	}
 	
-	public int getSizeIconeY(){
+	public int getSizeIconeY(){//desormais inutile
 		int h = (int)zoneDeDessin.getHeight();
 		return (int)(h/nombreIconesy); //renvoie la taille des lignes
 	}
@@ -96,11 +97,11 @@ public class FenetreJeu extends JFrame{
 	}
 	
 	public void DepartJeu(){
-		 
+		 /*
 		 monPanelDessin.addActionListener(null);//pour qu'on ne choississe qu'une fois le premier malade
 		 panelDeCommande.add(labelTimer); //on ajoute les caractéristiques du jeu
 		 panelDeCommande.add(passerTour);
-		 consignePremierMalade.setText("");// la consigne initiale ne s'affiche plus 
+		 consignePremierMalade.setText("");// la consigne initiale ne s'affiche plus */
 	}
     
 }

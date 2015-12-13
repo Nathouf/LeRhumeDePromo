@@ -22,6 +22,7 @@ public class FenetreJeu extends JFrame{
 	public int nombreIconesy;
 	private MonPanelDessin monPanelDessin;
 	private EcouteurPremierMalade ecoutPremierMalade;//pour nous donner sa position
+	private JPanel panelDeCommande = new JPanel(); //zone qui contient l'étiquette labelTimer et le bouton passerTour (en haut)
         
 	public FenetreJeu(Plateau plateau, int nbreIconesx, int nbreIconesy){
 		super("Fenêtre de jeu");
@@ -29,7 +30,6 @@ public class FenetreJeu extends JFrame{
 		this.nombreIconesy = nbreIconesy;  //nombre de lignes
                 monPanelDessin = new MonPanelDessin(this);
 		JPanel cadrePrincipal = new JPanel(new BorderLayout()); //cadre principal de la fenêtre qui contiendra tout
-		JPanel panelDeCommande = new JPanel(); //zone qui contient l'étiquette labelTimer et le bouton passerTour (en haut)
 		JPanel zoneDeLegende = new JPanel(); //zone qui contient la légende (à droite)
 		ecoutPremierMalade = new EcouteurPremierMalade(this);//instanciation,, pas nécessaire maintenant que j'y pense,, on verra
 	

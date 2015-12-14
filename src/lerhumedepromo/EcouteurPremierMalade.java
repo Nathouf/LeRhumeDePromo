@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package lerhumedepromo;
 
-/**
- *
- * @author Nath
- */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -42,22 +34,15 @@ public class EcouteurPremierMalade implements MouseListener {
 		public void mouseClicked(MouseEvent e) {//nous donne les coordonnées du clic
 			posMaladeX = e.getX();
 			posMaladeY = e.getY();	
+                    
+                        int x = posMaladeX / (FenetreJeu.monPanelDessin.getWidth()/FenetreJeu.nombreIconesx);
+                        int y =  posMaladeY / (FenetreJeu.monPanelDessin.getHeight()/FenetreJeu.nombreIconesy);
+                        FenetreJeu.monPlateau.tabEtudiant[y][x].etat=true;
+                        FenetreJeu.monPanelDessin.repaint();
+                        FenetreJeu.DepartJeu();	
 			}
 			
-	/*	public int getPosMaladeX(){//getter pour utiliser coord. dans les autres classes
-			return posMaladeX;
-			}*/	
-			
-	/*	public int getPosMaladeY(){////getter pour utiliser coord. dans les autres classes
-			return posMaladeY;
-			}*/ //car j'ai mis les coordonnées en public			
-		
+
 		
 		
 }
-
-//plateau.addMouseListener(new MouseAdapter() {// pour implementer tous les méthodes
-						//de MouseListener
-                                           	// overrides seulement celles qu'on a changé 
-						//autre solution pour ne pas écrire dans EcouteurPremierMalade
-						// toute methode de MouseListener

@@ -64,7 +64,7 @@ public class Plateau {
                 tabEtudiant[i][j].setEtat(nbVoisins, timer);
             }
         }
-        //setTimer();//il n'était utilisé null part
+        setTimer();//il n'était utilisé null part
         
 
     }

@@ -45,7 +45,7 @@ public class FenetreJeu extends JFrame{
                 passerTour.addActionListener(new EcouteurTour(this, monPanelDessin));//addition d'action au button,,changement car j'ai changé le constructeur pour qu'on mette repaint
                 monPanelDessin.addMouseListener(ecoutPremierMalade);
 
-		panelDeCommande.add(labelTimer,BorderLayout.NORTH);
+		
 		cadrePrincipal.add(passerTour,BorderLayout.SOUTH);
 		zoneDeLegende.add(legende,BorderLayout.NORTH);
 		cadrePrincipal.add(monPanelDessin,BorderLayout.CENTER);
@@ -96,8 +96,8 @@ public class FenetreJeu extends JFrame{
 	public void DepartJeu(){
 		 
 		 monPanelDessin.removeMouseListener(ecoutPremierMalade);//pour qu'on ne choississe qu'une fois le premier malade
-		 panelDeCommande.add(labelTimer); //on ajoute les caractéristiques du jeu
-		 panelDeCommande.add(passerTour);
+		 panelDeCommande.add(labelTimer,BorderLayout.NORTH); 
+                 panelDeCommande.add(passerTour);
 		 consignePremierMalade.setText("");// la consigne initiale ne s'affiche plus 
 	}
     

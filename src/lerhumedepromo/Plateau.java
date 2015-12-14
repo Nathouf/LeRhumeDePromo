@@ -16,8 +16,9 @@ public class Plateau {
     public void generationTableau() {
         
         
-        for (int i = 0; i < tabEtudiant[0].length; i++) {
-            for (int j = 0; j < tabEtudiant.length; j++) {
+		for (int j = 0; j < tabEtudiant[0].length; j++) {
+			for (int i = 0; i < tabEtudiant.length; i++) {
+           
                 //on genere un entier aléatoire entre 1 et 6 pour choisir la filière
                 int nombreAleatoire = 1 + (int) (Math.random() * 6);
                 //on utilise switch case plutot qu'une horrible boucle if else

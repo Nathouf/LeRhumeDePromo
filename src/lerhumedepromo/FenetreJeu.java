@@ -44,10 +44,9 @@ public class FenetreJeu extends JFrame{
 			
                 passerTour.addActionListener(new EcouteurTour(this, monPanelDessin));//addition d'action au button,,changement car j'ai changé le constructeur pour qu'on mette repaint
                 monPanelDessin.addMouseListener(ecoutPremierMalade);
-                
-		panelDeCommande.add(labelTimer,BorderLayout.NORTH);
-                panelDeCommande.add(consignePremierMalade);
+
 		
+		cadrePrincipal.add(passerTour,BorderLayout.SOUTH);
 		zoneDeLegende.add(legende,BorderLayout.NORTH);
 		cadrePrincipal.add(monPanelDessin,BorderLayout.CENTER);
 		cadrePrincipal.add(panelDeCommande,BorderLayout.NORTH);

@@ -16,19 +16,20 @@ import java.awt.event.*;
 
 public class EcouteurTour implements ActionListener{
     
-    private FenetreJeu FenetreJeu;
+    private FenetreJeu fenetreJeu;
     private MonPanelDessin monPanelDessin;
     
     public EcouteurTour(FenetreJeu fenetreDeJeu, MonPanelDessin monPanel){
-        FenetreJeu = fenetreDeJeu;
+        fenetreJeu = fenetreDeJeu;
         monPanelDessin = monPanel;
         
     }
     
     @Override
     	public void actionPerformed(ActionEvent e){
-       FenetreJeu.actualiserTour();
+       fenetreJeu.actualiserTour();
        monPanelDessin.repaint();
+       fenetreJeu.setLabelTimer();
         }
 }
         

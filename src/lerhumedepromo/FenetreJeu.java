@@ -16,7 +16,8 @@ import java.awt.Graphics;
 public class FenetreJeu extends JFrame{
     	public Plateau monPlateau;
 	private JLabel labelTimer;
-	private JButton passerTour;
+        private JLabel consignePremierMalade ;
+        private JButton passerTour;
 	private JLabel legende;
 	public int nombreIconesx;
 	public int nombreIconesy;
@@ -32,6 +33,7 @@ public class FenetreJeu extends JFrame{
                 monPanelDessin = new MonPanelDessin(this);
 		JPanel cadrePrincipal = new JPanel(new BorderLayout()); //cadre principal de la fenêtre qui contiendra tout
 		JPanel zoneDeLegende = new JPanel(new BorderLayout()); //zone qui contient la légende (à droite)
+                consignePremierMalade = new JLabel("Cliquez sur le premier étudiant à infecter");
 		ecoutPremierMalade = new EcouteurPremierMalade(this);//instanciation,, pas nécessaire maintenant que j'y pense,, on verra
 	
 		//Instanciations

@@ -20,7 +20,7 @@ public class FenetreJeu extends JFrame{
 	private JPanel zoneDeDessin;
 	public int nombreIconesx;
 	public int nombreIconesy;
-	private MonPanelDessin monPanelDessin;
+	public MonPanelDessin monPanelDessin;
 	private EcouteurPremierMalade ecoutPremierMalade;//pour nous donner sa position
 	private JPanel panelDeCommande = new JPanel(); //zone qui contient l'étiquette labelTimer et le bouton passerTour (en haut)
         

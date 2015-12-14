@@ -26,8 +26,8 @@ public class FenetreTaille extends JFrame {
         largeur = new JTextField("", 4);
         longueur = new JTextField("", 4);
         consigne = new JLabel("Sélectionner une taille de plateau");
-        nombreEtudiantsHorizontal = new JLabel("Nombre étudiants par ligne (min 2)");
-        nombreEtudiantsVertical = new JLabel("Nombre étudiants par colonne (min 2)");
+        nombreEtudiantsHorizontal = new JLabel("Nombre étudiants par colonne (min 2)");
+        nombreEtudiantsVertical = new JLabel("Nombre étudiants par ligne (min 2)");
         messageErreur = new JLabel();
         creerPlateau = new JButton("Créer");
         //ecouteurs

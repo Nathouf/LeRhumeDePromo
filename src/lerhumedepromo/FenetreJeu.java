@@ -21,7 +21,7 @@ public class FenetreJeu extends JFrame{
 	private JLabel legende;
 	public int nombreIconesx;
 	public int nombreIconesy;
-	private MonPanelDessin monPanelDessin;
+	public MonPanelDessin monPanelDessin;
 	private EcouteurPremierMalade ecoutPremierMalade;//pour nous donner sa position
 	private JPanel panelDeCommande = new JPanel(); //zone qui contient l'étiquette labelTimer et le bouton passerTour (en haut)
         
@@ -44,9 +44,10 @@ public class FenetreJeu extends JFrame{
 			
                 passerTour.addActionListener(new EcouteurTour(this, monPanelDessin));//addition d'action au button,,changement car j'ai changé le constructeur pour qu'on mette repaint
                 monPanelDessin.addMouseListener(ecoutPremierMalade);
-
+                
 		panelDeCommande.add(labelTimer,BorderLayout.NORTH);
-		cadrePrincipal.add(passerTour,BorderLayout.SOUTH);
+                panelDeCommande.add(consignePremierMalade);
+		
 		zoneDeLegende.add(legende,BorderLayout.NORTH);
 		cadrePrincipal.add(monPanelDessin,BorderLayout.CENTER);
 		cadrePrincipal.add(panelDeCommande,BorderLayout.NORTH);
@@ -95,9 +96,9 @@ public class FenetreJeu extends JFrame{
 	
 	public void DepartJeu(){
 		 
-		 monPanelDessin.removeActionListener(ecoutPremierMalade);//pour qu'on ne choississe qu'une fois le premier malade
-		 panelDeCommande.add(labelTimer); //on ajoute les caractéristiques du jeu
-		 panelDeCommande.add(passerTour);
+		 monPanelDessin.removeMouseListener(ecoutPremierMalade);//pour qu'on ne choississe qu'une fois le premier malade
+		 panelDeCommande.add(labelTimer,BorderLayout.NORTH); 
+                 panelDeCommande.add(passerTour);
 		 consignePremierMalade.setText("");// la consigne initiale ne s'affiche plus 
 	}
     

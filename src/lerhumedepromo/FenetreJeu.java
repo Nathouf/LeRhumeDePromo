@@ -17,10 +17,10 @@ public class FenetreJeu extends JFrame{
     	public Plateau monPlateau;
 	private JLabel labelTimer;
 	private JButton passerTour;
-	private JPanel zoneDeDessin;
+	private JLabel legende;
 	public int nombreIconesx;
 	public int nombreIconesy;
-	public MonPanelDessin monPanelDessin;
+	private MonPanelDessin monPanelDessin;
 	private EcouteurPremierMalade ecoutPremierMalade;//pour nous donner sa position
 	private JPanel panelDeCommande = new JPanel(); //zone qui contient l'étiquette labelTimer et le bouton passerTour (en haut)
         
@@ -31,18 +31,21 @@ public class FenetreJeu extends JFrame{
                 monPlateau = plateau;
                 monPanelDessin = new MonPanelDessin(this);
 		JPanel cadrePrincipal = new JPanel(new BorderLayout()); //cadre principal de la fenêtre qui contiendra tout
-		JPanel zoneDeLegende = new JPanel(); //zone qui contient la légende (à droite)
+		JPanel zoneDeLegende = new JPanel(new BorderLayout()); //zone qui contient la légende (à droite)
 		ecoutPremierMalade = new EcouteurPremierMalade(this);//instanciation,, pas nécessaire maintenant que j'y pense,, on verra
 	
 		//Instanciations
 		labelTimer = new JLabel("Semaine 1");
 		passerTour = new JButton("Passer tour");
+		legende = new JLabel(" Légende ");
 		 
 			
                 passerTour.addActionListener(new EcouteurTour(this, monPanelDessin));//addition d'action au button,,changement car j'ai changé le constructeur pour qu'on mette repaint
                 monPanelDessin.addMouseListener(ecoutPremierMalade);
 
-		
+		panelDeCommande.add(labelTimer,BorderLayout.NORTH);
+		cadrePrincipal.add(passerTour,BorderLayout.SOUTH);
+		zoneDeLegende.add(legende,BorderLayout.NORTH);
 		cadrePrincipal.add(monPanelDessin,BorderLayout.CENTER);
 		cadrePrincipal.add(panelDeCommande,BorderLayout.NORTH);
 		cadrePrincipal.add(zoneDeLegende,BorderLayout.EAST);

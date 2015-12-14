@@ -60,15 +60,7 @@ public class FenetreJeu extends JFrame{
 		labelTimer.setText("Semaine : "+monPlateau.timer); //on modifie l'étiquette du timer en fonction de la semaine
 	}
 	
-	public int getSizeIconeX(){//desormais inutile
-		int l = (int)zoneDeDessin.getWidth();
-		return (int)(l/nombreIconesx); //renvoie la taille des colonnes
-	}
-	
-	public int getSizeIconeY(){//desormais inutile
-		int h = (int)zoneDeDessin.getHeight();
-		return (int)(h/nombreIconesy); //renvoie la taille des lignes
-	}
+
 	
 	/*public void setPremierMalade(int x, int y)
 	à quoi servent les paramètres? coordonnées données pas mouseListener*/

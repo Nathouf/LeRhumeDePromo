@@ -25,8 +25,8 @@ nbIconesy = fenJeu.nombreIconesy;
             int hauteur = this.getHeight();
             super.paintComponent(g);
 
-            for(int lig=0 ; lig <fenJeu.monPlateau.tabEtudiant[0].length ; lig++) {
-                for(int col=0 ; col <fenJeu.monPlateau.tabEtudiant.length  ; col++) {
+            for(int lig=0 ; lig <fenJeu.monPlateau.tabEtudiant.length ; lig++) {
+                for(int col=0 ; col <fenJeu.monPlateau.tabEtudiant[0].length  ; col++) {
             
                     
                     if(fenJeu.monPlateau.tabEtudiant[lig][col].getEtat()){//si etat true(donc si malade) il devient rouge

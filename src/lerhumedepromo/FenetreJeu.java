@@ -92,11 +92,11 @@ public class FenetreJeu extends JFrame{
 	}
 	
 	public void DepartJeu(){
-		 /*
-		 monPanelDessin.addActionListener(null);//pour qu'on ne choississe qu'une fois le premier malade
+		 
+		 monPanelDessin.removeActionListener(ecoutPremierMalade);//pour qu'on ne choississe qu'une fois le premier malade
 		 panelDeCommande.add(labelTimer); //on ajoute les caractéristiques du jeu
 		 panelDeCommande.add(passerTour);
-		 consignePremierMalade.setText("");// la consigne initiale ne s'affiche plus */
+	//	 consignePremierMalade.setText("");// la consigne initiale ne s'affiche plus 
 	}
     
 }

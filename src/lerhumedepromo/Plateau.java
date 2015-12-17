@@ -10,15 +10,15 @@ public class Plateau {
         timer = 1;
         this.generationTableau(); //la methode crée le tableau puis le génère aléatoirement
     }
-    
+
 
 
     public void generationTableau() {
-        
-        
+
+
 		for (int j = 0; j < tabEtudiant[0].length; j++) {
 			for (int i = 0; i < tabEtudiant.length; i++) {
-           
+
                 //on genere un entier aléatoire entre 1 et 6 pour choisir la filière
                 int nombreAleatoire = 1 + (int) (Math.random() * 6);
                 //on utilise switch case plutot qu'une horrible boucle if else
@@ -49,8 +49,8 @@ public class Plateau {
     public void setTimer() {
         timer++;
     }
-    
-    
+
+
 
     public void leTour() {//fait le tour du tableau deux fois : passe les incubés à la malade et appelle la methode setEtat qui détermine si un Etudiant devient incumbé
         for (int i = 0; i < tabEtudiant.length; i++) {
@@ -65,7 +65,7 @@ public class Plateau {
             }
         }
         setTimer();//il n'était utilisé null part
-        
+
 
     }
 
@@ -165,17 +165,21 @@ public class Plateau {
         return nbVoisins;
     }
 
-    public boolean finPartie() {
-        boolean fin = true; //si on rencontre un seul étudiant non malade, la partie n'est pas finie
+    public int finPartie() {
+        int cas = 0;
+        boolean tousMalade = true; //si on rencontre un seul étudiant non malade, la partie n'est pas finie
         for (int i = 0; i < tabEtudiant.length; i++) {
             for (int j = 0; j < tabEtudiant[0].length; j++) {
-                fin = (fin && tabEtudiant[i][j].etat);
+                tousMalade = (tousMalade && tabEtudiant[i][j].etat);
             }
         }
-        if(timer==20){//a modiier selon
-            fin = true;
+        if(timer==40 && !tousMalade){//Le joueur a perdu
+            cas = 1;
         }
-        return fin;//mettre un message et fermer la fenetre
+        if(timer<=40 && tousMalade){//rien ne se passe
+            cas = 2;
+        }
+        return cas;//si tout le monde est malade, le retour vaut 0 : le joueur a gagné !
     }
 
 }

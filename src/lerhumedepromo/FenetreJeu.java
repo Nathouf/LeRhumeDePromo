@@ -7,10 +7,7 @@ import java.awt.event.*;
 import java.io.File;
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author Nath
- */
+
 public class FenetreJeu extends JFrame {
 
     public Plateau monPlateau;

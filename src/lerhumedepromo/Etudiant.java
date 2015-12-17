@@ -1,8 +1,8 @@
 package lerhumedepromo;
-//commtest
+
 
 public class Etudiant {//certains attributs devront peut etre mis en public pour que le programme fonctionne
-    //Cela permet de ne pas mettre plein de setters 
+    //Cela permet de ne pas mettre plein de setters
 
     public boolean etat;
     public boolean incubation;
@@ -29,7 +29,7 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
     public void setEtat(int nbVoisins, int timer) {
         this.timer = timer;//intialisation de timer
         if (etat == true || nbVoisins == 0) {//l'étudiant est déja malade ou personne n'est malade autours de lui
-            //ne rien faire  
+            //ne rien faire
         } else {
             setIncubation(nbVoisins, timer);
         }
@@ -47,7 +47,7 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
         return timer;
     }
 
-    public void setIncubation(int nbVoisins, int timer) { //methode a completer 
+    public void setIncubation(int nbVoisins, int timer) { //methode a completer
       /*  int C1 = fragilite + sociabilite;
         int C2 = 0; //les constantes C2,C3,C4 vont augmenter si l'etudiant participe aux differnts evenements
         int C3 = 0;
@@ -82,11 +82,11 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
         if ((C1 + C2 + C3 + C4 + C5) >= 30) {
             this.incubation = true;
         }*/
-        //pour tester sans les coefficients 
+        //pour tester sans les coefficients
             incubation=true;
     }
 
-    public void lesSymptomesApparaissent() {//sert au premier balayage du tableau, pour que tous les incubés deviennent malades, 
+    public void lesSymptomesApparaissent() {//sert au premier balayage du tableau, pour que tous les incubés deviennent malades,
         //PUIS que l'on traite les nouveaux cas
         if (incubation) {
             etat = true;

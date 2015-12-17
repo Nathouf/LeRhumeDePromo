@@ -1,16 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package lerhumedepromo;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.Graphics;
-import java.io.IOException;
-import javax.imageio.ImageIO;
+import java.io.File;
 import javax.swing.ImageIcon;
 
 /**
@@ -47,16 +41,16 @@ public class FenetreJeu extends JFrame {
         labelTimer = new JLabel("Semaine 1");
         passerTour = new JButton("Passer tour");
        // legende = new JLabel(" Légende ");
-        
-        File origFile = new File("/Users/kostmarios7/Desktop/photo.jpg");
+
+        File origFile = new File("C:\\Users\\Nath\\Desktop\\laplusbelle.jpg");
         ImageIcon icon = new ImageIcon(origFile.getPath());
-        
+
         legende = new JLabel(icon);
                 legende.setText("Légende");
                 legende.setHorizontalTextPosition(JLabel.CENTER);
                 legende.setVerticalTextPosition(JLabel.TOP);
-        
-        
+
+
 
         monPanelDessin.addMouseListener(ecoutPremierMalade);
 

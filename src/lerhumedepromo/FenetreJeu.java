@@ -26,15 +26,16 @@ public class FenetreJeu extends JFrame {
     public MonPanelDessin monPanelDessin;
     private EcouteurPremierMalade ecoutPremierMalade;//pour nous donner sa position
     private JPanel panelDeCommande = new JPanel(); //zone qui contient l'étiquette labelTimer et le bouton passerTour (en haut)
-
+    private JPanel cadrePrincipal = new JPanel(new BorderLayout());;
+    private JPanel zoneDeLegende = new JPanel(new BorderLayout()); //zone qui contient la légende (à droite)
+    
     public FenetreJeu(Plateau plateau, int nbreIconesx, int nbreIconesy) {
         super("Fenêtre de jeu");
         this.nombreIconesx = nbreIconesx; //nombre de colonnes  
         this.nombreIconesy = nbreIconesy;  //nombre de lignes
         monPlateau = plateau;
         monPanelDessin = new MonPanelDessin(this);
-        JPanel cadrePrincipal = new JPanel(new BorderLayout()); //cadre principal de la fenêtre qui contiendra tout
-        JPanel zoneDeLegende = new JPanel(new BorderLayout()); //zone qui contient la légende (à droite)
+        
         consignePremierMalade = new JLabel("Cliquez sur le premier étudiant à infecter");
         ecoutPremierMalade = new EcouteurPremierMalade(this);//instanciation,, pas nécessaire maintenant que j'y pense,, on verra
 
@@ -92,8 +93,18 @@ public class FenetreJeu extends JFrame {
         panelDeCommande.add(labelTimer, BorderLayout.NORTH);
         panelDeCommande.add(passerTour);
         consignePremierMalade.setText("");// la consigne initiale ne s'affiche plus 
-     
-        revalidate();
+        revalidate(); //sert à actualiser la fenetre comme un repaint, sinon elle ne s'actualisait qu'au redimensionnement de la fenetre
+        
+    }
+    public void ecranFinPartie(){
+        cadrePrincipal.remove(monPanelDessin);
+        cadrePrincipal.remove(zoneDeLegende);
+      for(ActionListener act : passerTour.getActionListeners()){ //On doit passer par ca par l'action listener de passer tour est anonyme
+          passerTour.removeActionListener(act);
+      }
+        repaint();
+        
+        
     }
 
 }

@@ -172,7 +172,10 @@ public class Plateau {
                 fin = (fin && tabEtudiant[i][j].etat);
             }
         }
-        return fin;
+        if(timer==20){//a modiier selon
+            fin = true;
+        }
+        return fin;//mettre un message et fermer la fenetre
     }
 
 }

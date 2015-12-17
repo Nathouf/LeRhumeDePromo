@@ -30,6 +30,11 @@ public class EcouteurTour implements ActionListener{
        fenetreJeu.actualiserTour();
        monPanelDessin.repaint();
        fenetreJeu.setLabelTimer();
-        }
+       if(fenetreJeu.monPlateau.finPartie()){
+           fenetreJeu.ecranFinPartie();
+       }
+       
+        
+}
 }
         

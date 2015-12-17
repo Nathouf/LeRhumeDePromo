@@ -32,6 +32,7 @@ public class FenetreJeu extends JFrame {
         monPanelDessin = new MonPanelDessin(this);
 
         consignePremierMalade = new JLabel("Cliquez sur le premier étudiant à infecter");
+        panelDeCommande.add(consignePremierMalade);
         ecoutPremierMalade = new EcouteurPremierMalade(this);//instanciation,, pas nécessaire maintenant que j'y pense,, on verra
 
         //Instanciations

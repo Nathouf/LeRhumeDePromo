@@ -43,7 +43,17 @@ public class FenetreJeu extends JFrame {
         //Instanciations
         labelTimer = new JLabel("Semaine 1");
         passerTour = new JButton("Passer tour");
-        legende = new JLabel(" Légende ");
+       // legende = new JLabel(" Légende ");
+        
+        File origFile = new File("/Users/kostmarios7/Desktop/photo.jpg");
+        ImageIcon icon = new ImageIcon(origFile.getPath());
+        
+        legende = new JLabel(icon);
+                legende.setText("Légende");
+                legende.setHorizontalTextPosition(JLabel.CENTER);
+                legende.setVerticalTextPosition(JLabel.TOP);
+        
+        
 
         monPanelDessin.addMouseListener(ecoutPremierMalade);
 

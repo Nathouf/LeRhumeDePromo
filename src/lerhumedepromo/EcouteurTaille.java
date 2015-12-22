@@ -20,6 +20,7 @@ public class EcouteurTaille implements ActionListener{
         fen.masquerFenetre();
         
         FenetreJeu fenJeu = new FenetreJeu(plateauJeu, x , y );
+        FenetreConsigne fenConsigne = new FenetreConsigne(fenJeu); //création d'un fenetre qui explique les consignes du jeu
         }
     }
 }

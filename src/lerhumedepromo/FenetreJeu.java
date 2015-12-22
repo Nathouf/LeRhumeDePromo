@@ -105,7 +105,7 @@ public class FenetreJeu extends JFrame {
         }
         repaint();
 
-        JLabel messageWin = new JLabel("Win");
+        JLabel messageWin = new JLabel("Bravo, vous avez gagné! Tous les étudiants ont été infectés avant la fin de l'année!");
 
         cadrePrincipal.add(messageWin, BorderLayout.CENTER);
     }
@@ -116,7 +116,7 @@ public class FenetreJeu extends JFrame {
             passerTour.removeActionListener(act);
         }
         repaint();
-        JLabel messageWin = new JLabel("Lose");
+        JLabel messageWin = new JLabel("Vous avez perdu, il reste encore des étudiants en forme!");
 
         cadrePrincipal.add(messageWin, BorderLayout.CENTER);
         //AJOUTER UN MESSAGE / ANIMATION

@@ -47,22 +47,22 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
         return timer;
     }
 
-    public void setIncubation(int nbVoisins, int timer) { //methode a completer
-      /*  int C1 = fragilite + sociabilite;
+    public void setIncubation(int nbVoisins, int timer) {
+      	int C1 = fragilite + sociabilite;
         int C2 = 0; //les constantes C2,C3,C4 vont augmenter si l'etudiant participe aux differnts evenements
         int C3 = 0;
         int C4 = 0;
         int C5 = 0; //par forcement nécessaire mais plus clair = C5 correspond au nombre voisins
 
-        if (this.wei && timer == 2) { //si l'etudiant participe au wei et qu'on est en période de wei (semaine 2 à ajuster)
-            C2 = 6; //l'etudiant a plus de rique d'imcuber la maladie
+        if (this.wei && timer == 1) { //si l'etudiant participe au wei et qu'on est en période de wei (semaine 2)
+            C2 = 8; //l'etudiant a plus de rique d'imcuber la maladie
         }
 
-        if (this.ppJanvier && timer == 15) { //si l'etudiant participe au ppJanvier et qu'on est en periode de ppJanvier (semaine 15, à ajuster)
-            C3 = 4; //l'etudiant a plus de rique d'imcuber la maladie
+        if (this.ppJanvier && timer == 15) { //si l'etudiant participe au ppJanvier et qu'on est en periode de ppJanvier (semaine 15)
+            C3 = 8; //l'etudiant a plus de rique d'imcuber la maladie
         }
-        if (this.vingtQuatreHeures && timer == 22) { //si l'etudiant participe au 24h et qu'on est en période de 24h (semaine 22 à ajuster)
-            C4 = 4; //l'etudiant a plus de rique d'imcuber la maladie
+        if (this.vingtQuatreHeures && timer == 28) { //si l'etudiant participe au 24h et qu'on est en période de 24h (semaine 28)
+            C4 = 8; //l'etudiant a plus de rique d'imcuber la maladie
         }
         if (nbVoisins <= 1) {
             //ne rien faire juste ici pour montrer que cas pris en compte
@@ -77,13 +77,10 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
             C5 = 4;
         }
 
-	   //coefficient à modifier s'ils sont trop importants
-        //idée formule 0,5*C1 + 0,8*C2 + 0,2*C3 + C4*0,6 + 0,5*C5
-        if ((C1 + C2 + C3 + C4 + C5) >= 30) {
+        if ((2*C1 + C2 + C3 + C4 + 3*C5) >= 9) {
             this.incubation = true;
-        }*/
-        //pour tester sans les coefficients
-            incubation=true;
+        }
+     
     }
 
     public void lesSymptomesApparaissent() {//sert au premier balayage du tableau, pour que tous les incubés deviennent malades,

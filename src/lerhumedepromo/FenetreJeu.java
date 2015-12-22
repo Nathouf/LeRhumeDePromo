@@ -62,7 +62,7 @@ public class FenetreJeu extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //la fenêtre se ferme quand on clique sur la x
         setSize(600, 400);
         setContentPane(cadrePrincipal);
-        setVisible(true);
+        setVisible(false);
 
     }
 
@@ -120,6 +120,9 @@ public class FenetreJeu extends JFrame {
 
         cadrePrincipal.add(messageWin, BorderLayout.CENTER);
         //AJOUTER UN MESSAGE / ANIMATION
+    }
+    public void afficherFenetre() {
+        setVisible(true);
     }
 
 }

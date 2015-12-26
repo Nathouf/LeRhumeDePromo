@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import javax.swing.ImageIcon;
+//import javax.swing.JProgressBar;
 
 
 public class FenetreJeu extends JFrame {

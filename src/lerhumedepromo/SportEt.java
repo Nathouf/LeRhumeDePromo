@@ -10,7 +10,7 @@ public class SportEt extends Etudiant{
                 
 	}
         
-        public void setBlessure(){
+        public void setBlessure(){//on met alétoirement s'ils sont blessés ou pas et on adjuste leur coefficient d'incubation
             int nombreAleatoire = (int) ( Math.random() * 2 + 1);
             int timer = getTimer();
             if((timer>10)&&(timer<17)){

@@ -14,7 +14,7 @@ public class EcouteurTaille implements ActionListener{
         int x=fen.getLongueur();
         int y=fen.getLargeur();//hauteur
         if(x<=2 || y<=2){
-            fen.setLabelErreur();
+            fen.setLabelErreur();//Pour afficher un message d'erreur au cas où le joueur ne respecte pas la consigne du jeu par rapport la taille du tableau
         } else {
         Plateau plateauJeu = new Plateau(y,x);
         fen.masquerFenetre();

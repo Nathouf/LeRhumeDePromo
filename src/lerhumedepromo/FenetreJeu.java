@@ -30,6 +30,7 @@ public class FenetreJeu extends JFrame {
     private JPanel panelDeCommande = new JPanel(); //zone qui contient l'étiquette labelTimer et le bouton passerTour (en haut)
     private JPanel cadrePrincipal = new JPanel(new BorderLayout());
     private JPanel zoneDeLegende = new JPanel(new BorderLayout()); //zone qui contient la légende (à droite)
+    private JTextArea evenement; //afficher les évènements de chaque semaine
 
     public FenetreJeu(Plateau plateau, int nbreIconesx, int nbreIconesy) {
         super("Fenêtre de jeu");
@@ -88,6 +89,7 @@ public class FenetreJeu extends JFrame {
 
     public void setLabelTimer() {
         labelTimer.setText("Semaine : " + monPlateau.timer); //on modifie l'étiquette du timer en fonction de la semaine
+        setEvenement();
     }
 
     /*public void setPremierMalade(int x, int y)
@@ -179,5 +181,23 @@ public class FenetreJeu extends JFrame {
 	 * 
 		}
 	}*/
+	
+	public void setEvenement(){
+		
+		//comme timer est dans plateau
+		if(monPlateau.timer==1){
+			evenement.setText("Pour fêter l'arrivée des primo-rentrants, certains partent au WEI !");
+		}
+		if(monPlateau.timer==15){
+			evenement.setText("Pour décompresser de la semaine de DS, les Etudiants participent aux post-partiels !");
+		}
+		if(monPlateau.timer==28){
+			evenement.setText("Le beau temps, l'air printanier..C'est l'heure des 24H !");	
+		}
+		if(monPlateau.timer==30){
+			evenement.setText("C'est la fin d'année, c'est les Post-partiels de Juin !!");
+		}
+
+	}
 
 }

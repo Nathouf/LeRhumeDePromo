@@ -182,7 +182,7 @@ public class Plateau {
         boolean tousMalade = true; //si on rencontre un seul étudiant non malade, la partie n'est pas finie
         for (int i = 0; i < tabEtudiant.length; i++) {
             for (int j = 0; j < tabEtudiant[0].length; j++) {
-                tousMalade = (tousMalade && tabEtudiant[i][j].etat);
+                tousMalade = (tousMalade && tabEtudiant[i][j].etat);//tousMalade commence par true mais à la fin il est true si et seulement si tous sont malades
             }
         }
         if(timer==40 && !tousMalade){//Le joueur a perdu

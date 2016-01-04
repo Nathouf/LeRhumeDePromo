@@ -17,7 +17,7 @@ public class EcouteurTaille implements ActionListener{
             fen.setLabelErreur();//Pour afficher un message d'erreur au cas où le joueur ne respecte pas la consigne du jeu par rapport la taille du tableau
         } else {
         Plateau plateauJeu = new Plateau(y,x);
-        fen.masquerFenetre();
+        fen.masquerFenetre(); //si les valeurs entrées sont correctes, il masque la fenêtre où le joueur choisit la taille du tableau
         
         FenetreJeu fenJeu = new FenetreJeu(plateauJeu, x , y );
         FenetreConsigne fenConsigne = new FenetreConsigne(fenJeu); //création d'un fenetre qui explique les consignes du jeu

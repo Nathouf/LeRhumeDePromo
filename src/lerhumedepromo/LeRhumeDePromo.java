@@ -18,5 +18,5 @@ public class LeRhumeDePromo {
         // TODO code application logic here
         FenetreTaille fen= new FenetreTaille();
     }
-    //bwaaah
+    
 }

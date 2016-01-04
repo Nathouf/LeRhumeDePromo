@@ -119,7 +119,7 @@ public class FenetreJeu extends JFrame {
 
     }
 
-    public void ecranFinPartieWin() {
+    public void ecranFinPartieWin() {//les actions à faire quand le joueur a gagné, utilisé dans ecouteurTour
         cadrePrincipal.remove(monPanelDessin);
         cadrePrincipal.remove(zoneDeLegende);
         for (ActionListener act : passerTour.getActionListeners()) { //On doit passer par ca par l'action listener de passer tour est anonyme
@@ -131,7 +131,7 @@ public class FenetreJeu extends JFrame {
 
         cadrePrincipal.add(messageWin, BorderLayout.CENTER);
     }
-     public void ecranFinPartieLose() {
+     public void ecranFinPartieLose() {//les actions à faire au cas où le joueur a perdu, utilisé dans ecouteurTour
         cadrePrincipal.remove(monPanelDessin);
         cadrePrincipal.remove(zoneDeLegende);
         for (ActionListener act : passerTour.getActionListeners()) { //On doit passer par ca par l'action listener de passer tour est anonyme

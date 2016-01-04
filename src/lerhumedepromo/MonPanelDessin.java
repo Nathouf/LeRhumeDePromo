@@ -32,7 +32,7 @@ nbIconesy = fenJeu.nombreIconesy;
                     if(fenJeu.monPlateau.tabEtudiant[lig][col].getEtat()){//si etat true(donc si malade) il devient rouge
                         g.setColor(Color.red);     }       //sinon on regarde les autres
                     else if(fenJeu.monPlateau.tabEtudiant[lig][col].getFiliere()==1){//d'abord on prend le filiere on fait if pour 
-                        g.setColor(Color.orange);            }//trouver les filieres et on leur assigne une couleur
+                        g.setColor(Color.pink);            }//trouver les filieres et on leur assigne une couleur
                     else if(fenJeu.monPlateau.tabEtudiant[lig][col].getFiliere()==2){//puis le fillRect dois donner la couleur qui correspond
                         g.setColor(Color.magenta);            }//si tout se passe bien
                     else if(fenJeu.monPlateau.tabEtudiant[lig][col].getFiliere()==3){
@@ -42,11 +42,12 @@ nbIconesy = fenJeu.nombreIconesy;
                     else if(fenJeu.monPlateau.tabEtudiant[lig][col].getFiliere()==5){
                         g.setColor(Color.blue);            }
                     else if(fenJeu.monPlateau.tabEtudiant[lig][col].getFiliere()==6){
-                        g.setColor(Color.black);            }
+                        g.setColor(Color.cyan);            }
                     
                   
-                    g.fillOval(col*(int)(largeur/nbIconesx),lig*(int)(hauteur/nbIconesy),(int)(largeur/nbIconesx),(int)(hauteur/nbIconesy));
-
+               		g.fillOval(col*(int)(largeur/nbIconesx),lig*(int)(hauteur/nbIconesy),(int)(largeur/nbIconesx),(int)(hauteur/nbIconesy));
+			g.setColor(Color.black);
+			g.drawRect(col*(int)(largeur/nbIconesx),lig*(int)(hauteur/nbIconesy),(int)(largeur/nbIconesx),(int)(hauteur/nbIconesy));
                         }
         
                }

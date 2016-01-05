@@ -45,7 +45,7 @@ nbIconesy = fenJeu.nombreIconesy;
                         g.setColor(Color.cyan);            }
                     
                   
-               		g.fillOval(col*(int)(largeur/nbIconesx),lig*(int)(hauteur/nbIconesy),(int)(largeur/nbIconesx),(int)(hauteur/nbIconesy));
+               		g.fillRect(col*(int)(largeur/nbIconesx),lig*(int)(hauteur/nbIconesy),(int)(largeur/nbIconesx),(int)(hauteur/nbIconesy));
 			g.setColor(Color.black);
 			g.drawRect(col*(int)(largeur/nbIconesx),lig*(int)(hauteur/nbIconesy),(int)(largeur/nbIconesx),(int)(hauteur/nbIconesy));
                         }

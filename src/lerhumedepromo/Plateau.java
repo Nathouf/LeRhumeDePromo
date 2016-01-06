@@ -191,7 +191,7 @@ public class Plateau {
         if(timer<=40 && tousMalade){//Le joueur gagne
             cas = 2;
         }
-        return cas;//si tout le monde est malade, le retour vaut 0 : le joueur a gagné !
+        return cas;//si tout le monde est malade, le retour vaut 2 : le joueur a gagné !
     }
 
 }

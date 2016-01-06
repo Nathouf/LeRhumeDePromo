@@ -12,15 +12,15 @@ public class EcouteurTaille implements ActionListener{
     }
     public void actionPerformed(ActionEvent ae){
         int x=fen.getLongueur();
-        int y=fen.getLargeur();//hauteur
+        int y=fen.getLargeur();//équivaut à la hauteur du tableau
         if(x<=2 || y<=2){
-            fen.setLabelErreur();//Pour afficher un message d'erreur au cas où le joueur ne respecte pas la consigne du jeu par rapport la taille du tableau
+            fen.setLabelErreur();//Pour afficher un message d'erreur au cas où le joueur ne respecte pas la taille du tableau minimum
         } else {
         Plateau plateauJeu = new Plateau(y,x);
-        fen.masquerFenetre(); //si les valeurs entrées sont correctes, il masque la fenêtre où le joueur choisit la taille du tableau
+        fen.masquerFenetre(); //si les valeurs entrées sont correctes, on masque la FenêtreTaille 
         
         FenetreJeu fenJeu = new FenetreJeu(plateauJeu, x , y );
-        FenetreConsigne fenConsigne = new FenetreConsigne(fenJeu); //création d'un fenetre qui explique les consignes du jeu
+        FenetreConsigne fenConsigne = new FenetreConsigne(fenJeu); //création de la FenetreConsigne 
         }
     }
 }

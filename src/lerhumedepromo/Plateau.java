@@ -4,12 +4,7 @@ public class Plateau {
 
     public Etudiant[][] tabEtudiant; //on met en public pour y acceder plus facilement dans les autres classes
     public int timer;    //on met en public pour y acceder plus facilement dans les autres classes
-    /* public  int nbrEr = 0;
-	public int nbrAs = 0;
-	public int nbrAm = 0;
-	public int nbrCla = 0;
-	public int nbrZiq = 0;
-	public int nbrSpEt = 0;*/
+
 
     public Plateau(int hauteur, int longueur) {
         tabEtudiant = new Etudiant[hauteur][longueur];
@@ -31,27 +26,21 @@ public class Plateau {
                 switch (nombreAleatoire) {
                     case 1:
                         tabEtudiant[i][j] = new Eurinsa();
-                        //nbrEr = nbrEr + 1;
                         break;
                     case 2:
                         tabEtudiant[i][j] = new Amerinsa();
-                        //nbrAm = nbrAm + 1;
                         break;
                     case 3:
                         tabEtudiant[i][j] = new Asinsa();
-                        //nbrAs = nbrAs + 1;
                         break;
                     case 4:
                         tabEtudiant[i][j] = new SportEt();
-                        //nbrSpEt = nbrSpEt + 1;
                         break;
                     case 5:
                         tabEtudiant[i][j] = new Classique();
-                        //nbrCla = nbrCla + 1;
                         break;
                     case 6:
                         tabEtudiant[i][j] = new ZiqEt();
-                        //nbrZiq = nbrZiq +1;
                         break;
                 }
             }
@@ -192,6 +181,18 @@ public class Plateau {
             cas = 2;
         }
         return cas;//si tout le monde est malade, le retour vaut 2 : le joueur a gagné !
+    }
+
+    public int compteurMalades(){
+       int nbMalades =0;
+        for (int i = 0; i < tabEtudiant.length; i++) {
+            for (int j = 0; j < tabEtudiant[0].length; j++) {
+                if(tabEtudiant[i][j].etat){
+                    nbMalades++;
+                }
+            }
+        }
+        return nbMalades;
     }
 
 }

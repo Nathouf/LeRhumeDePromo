@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import javax.swing.ImageIcon;
+import javax.swing.text.StyleConstants;
 
 
 
@@ -26,7 +27,7 @@ public class FenetreJeu extends JFrame {
     private JPanel panelDeCommande = new JPanel(); //zone qui contient l'étiquette labelTimer et le bouton passerTour (en haut)
     private JPanel cadrePrincipal = new JPanel(new BorderLayout());
     private JPanel zoneDeLegende = new JPanel(new BorderLayout()); //zone qui contient la légende (à droite)
-    private JTextArea evenement; //afficher les évènements de chaque semaine
+    private JLabel evenement; //afficher les évènements de chaque semaine
 
     public FenetreJeu(Plateau plateau, int nbreIconesx, int nbreIconesy) {
         super("Fenêtre de jeu");
@@ -43,9 +44,8 @@ public class FenetreJeu extends JFrame {
         pBMalades.setBackground(Color.GREEN);
         labelTimer = new JLabel("Semaine 1");
         passerTour = new JButton("Passer tour");
-        evenement=new JTextArea();
-        evenement.setEnabled(false);
-
+        evenement=new JLabel();
+        zoneDeLegende.setPreferredSize(new Dimension(200,monPanelDessin.getHeight()));
         File origFile = new File("C:\\Users\\Nath\\Desktop\\laplusbelle.jpg");
         ImageIcon icon = new ImageIcon(origFile.getPath());
 
@@ -143,23 +143,23 @@ public class FenetreJeu extends JFrame {
 
 
                 if(monPlateau.timer==2){
-			evenement.setText("Pour fêter l'arrivée des primo-rentrants, certains partent au WEI !");
+			evenement.setText("<html> Pour fêter l'arrivée <br> des primo-rentrants,<br>  certains partent au WEI ! </html>");
 		}
                 else if(monPlateau.timer==15){
-			evenement.setText("Pour décompresser de la semaine de DS, les Etudiants participent aux post-partiels !");
+			evenement.setText("<html>Pour décompresser<br> de la semaine de DS,<br> les Etudiants participent <br>aux post-partiels ! </html>");
 
 		}
                 else if(monPlateau.timer>16&&monPlateau.timer<24){
-			evenement.setText("Les Sport'Et partent aux championnats ! ils ont plus de risque de se blesser et de tomber malades");
+			evenement.setText("<html>Les Sport'Et partent <br> aux championnats ! ils ont plus de risque de se blesser et<br> de tomber malades </html>");
 		}
                 else if(monPlateau.timer==28){
-			evenement.setText("Le beau temps, l'air printanier..C'est l'heure des 24H !");
+			evenement.setText("<html>Le beau temps, <br>l'air printanier..<br>C'est l'heure des 24H ! </html>");
 		}
                 else if(monPlateau.timer==30){
-			evenement.setText("C'est la fin d'année, c'est les Post-partiels de Juin !!");
+			evenement.setText("<html>C'est la fin d'année,<br> c'est les Post-partiels <br>de Juin !! </html>");
 		}
                 else if(monPlateau.timer==38){
-			evenement.setText("C'est bientôt la fin ! Etait-ce trop ambitieux ?!");
+			evenement.setText("<html>C'est bientôt la fin ! <br>Etait-ce trop ambitieux ?! </html>");
 		}
                 else{
                     evenement.setText("");

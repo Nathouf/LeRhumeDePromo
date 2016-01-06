@@ -39,6 +39,8 @@ public class FenetreJeu extends JFrame {
         panelDeCommande.add(consignePremierMalade);
         ecoutPremierMalade = new EcouteurPremierMalade(this);
         pBMalades= new JProgressBar(0, monPlateau.tabEtudiant[0].length*monPlateau.tabEtudiant.length);
+        pBMalades.setForeground(Color.RED);
+        pBMalades.setBackground(Color.GREEN);
         labelTimer = new JLabel("Semaine 1");
         passerTour = new JButton("Passer tour");
        // legende = new JLabel(" Légende ");

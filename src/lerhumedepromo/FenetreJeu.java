@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import javax.swing.ImageIcon;
-//import javax.swing.JProgressBar;
+
 
 
 public class FenetreJeu extends JFrame {
@@ -20,13 +20,9 @@ public class FenetreJeu extends JFrame {
     public int nombreIconesy;
     public MonPanelDessin monPanelDessin;
     private EcouteurPremierMalade ecoutPremierMalade;//pour nous donner sa position
-        //progress Bar
-    //private JProgressBar pBEur;
-	//private JProgressBar pBZiq;
-	//private JProgressBar pBCla;
-	//private JProgressBar pBSpEt;
-	//private JProgressBar pBAs;
-	//private JProgressBar pBAm;
+
+    private JProgressBar pBMalades;
+
     private JPanel panelDeCommande = new JPanel(); //zone qui contient l'étiquette labelTimer et le bouton passerTour (en haut)
     private JPanel cadrePrincipal = new JPanel(new BorderLayout());
     private JPanel zoneDeLegende = new JPanel(new BorderLayout()); //zone qui contient la légende (à droite)
@@ -41,16 +37,8 @@ public class FenetreJeu extends JFrame {
 
         consignePremierMalade = new JLabel("Cliquez sur le premier étudiant à infecter");
         panelDeCommande.add(consignePremierMalade);
-        ecoutPremierMalade = new EcouteurPremierMalade(this);//instanciation,, pas nécessaire maintenant que j'y pense,, on verra
-        //pas trop sure de ou il faut placer l'instanciation
-        //pBarEur = new JProgressBar(0, nbrEr);
-        //pBAm = new JProgressBar(0, nbrAm);
-        //pBAs = new JProgressBar(0, nbrAs);
-        //pBZiq = new JProgressBar(0, nbrZiq);
-        //pBSpEt = new JProgressBar(0, nbrSpEt);
-        //pBCla = new JProgressBar(0, nbrCla);
-
-        //Instanciations
+        ecoutPremierMalade = new EcouteurPremierMalade(this);
+        pBMalades= new JProgressBar(0, monPlateau.tabEtudiant[0].length*monPlateau.tabEtudiant.length);
         labelTimer = new JLabel("Semaine 1");
         passerTour = new JButton("Passer tour");
        // legende = new JLabel(" Légende ");
@@ -68,12 +56,8 @@ public class FenetreJeu extends JFrame {
         monPanelDessin.addMouseListener(ecoutPremierMalade);
 
         zoneDeLegende.add(legende, BorderLayout.NORTH);
-        //zoneDeLegende.add(pBEur, BorderLayout.CENTER);
-        //zoneDeLegende.add(pBAm, BorderLayout.CENTER);
-        //zoneDeLegende.add(pBAs, BorderLayout.CENTER);
-        //zoneDeLegende.add(pBZiq, BorderLayout.CENTER);
-        //zoneDeLegende.add(pBSpEt, BorderLayout.CENTER);
-        //zoneDeLegende.add(pBCla, BorderLayout.CENTER);
+        zoneDeLegende.add(pBMalades, BorderLayout.CENTER);
+
         cadrePrincipal.add(monPanelDessin, BorderLayout.CENTER);
         cadrePrincipal.add(panelDeCommande, BorderLayout.NORTH);
         cadrePrincipal.add(zoneDeLegende, BorderLayout.EAST);
@@ -103,6 +87,7 @@ public class FenetreJeu extends JFrame {
 
     public void actualiserTour() {
         monPlateau.leTour();
+         pBMalades.setValue(monPlateau.compteurMalades());//actualisation de la barre de Progrès
     }
 
 
@@ -146,44 +131,10 @@ public class FenetreJeu extends JFrame {
     public void afficherFenetre() {
         setVisible(true);
     }
-    
-    //int newValue = 0;
-	/*public void updateBar(Etudiant e){
-	 * 
-	 * if( e.getFilière == Eurinsa){
-	 * newValue = newValue +1;
-	 * pBEur.setValue(newValue);
-	 * 
-		}
-	* if( e.getFilière == Amerinsa){
-	 * newValue = newValue +1;
-	 * pBAm.setValue(newValue);
-	 * 
-		}
-	* if( e.getFilière == Asinsa){
-	 * newValue = newValue +1;
-	 * pBAs.setValue(newValue);
-	 * 
-		}
-	* if( e.getFilière == SportEt){
-	 * newValue = newValue +1;
-	 * pBSpEt.setValue(newValue);
-	 * 
-		}
-	* if( e.getFilière == ZiqEt){
-	 * newValue = newValue +1;
-	 * pBZiq.setValue(newValue);
-	 * 
-		}
-	* if( e.getFilière == Classique){
-	 * newValue = newValue +1;
-	 * pBCla.setValue(newValue);
-	 * 
-		}
-	}*/
-	
+
+
 	public void setEvenement(){
-		
+
 		//comme timer est dans plateau
 		if(monPlateau.timer==1){
 			evenement.setText("Pour fêter l'arrivée des primo-rentrants, certains partent au WEI !");
@@ -192,7 +143,7 @@ public class FenetreJeu extends JFrame {
 			evenement.setText("Pour décompresser de la semaine de DS, les Etudiants participent aux post-partiels !");
 		}
 		if(monPlateau.timer==28){
-			evenement.setText("Le beau temps, l'air printanier..C'est l'heure des 24H !");	
+			evenement.setText("Le beau temps, l'air printanier..C'est l'heure des 24H !");
 		}
 		if(monPlateau.timer==30){
 			evenement.setText("C'est la fin d'année, c'est les Post-partiels de Juin !!");

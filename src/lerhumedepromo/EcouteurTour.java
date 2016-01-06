@@ -20,9 +20,9 @@ public class EcouteurTour implements ActionListener{
 
     @Override
     	public void actionPerformed(ActionEvent e){
-       fenetreJeu.actualiserTour();//change le fenetreJeu par rapport le nouveau nombre des malades
-       monPanelDessin.repaint();// repaint pour colorier rouges les élèves qui sont devenus malades
-       fenetreJeu.setLabelTimer();//pour incrementer le nombre de semaine dans fenetreJeu
+       fenetreJeu.actualiserTour();//actualise la fenetreJeu par rapport au nombre de malades pour la semaine suivante
+       monPanelDessin.repaint();// repaint est utilisé pour changer les élèves devenus malades en rouge
+       fenetreJeu.setLabelTimer();//pour incrementer le nombre de semaine dans fenetreJeu et faire évoluer le jeu dans le temps
        if(fenetreJeu.monPlateau.finPartie()==1){
            fenetreJeu.ecranFinPartieLose();
        }

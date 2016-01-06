@@ -43,7 +43,8 @@ public class FenetreJeu extends JFrame {
         pBMalades.setBackground(Color.GREEN);
         labelTimer = new JLabel("Semaine 1");
         passerTour = new JButton("Passer tour");
-       // legende = new JLabel(" Légende ");
+        evenement=new JTextArea();
+        evenement.setEnabled(false);
 
         File origFile = new File("C:\\Users\\Nath\\Desktop\\laplusbelle.jpg");
         ImageIcon icon = new ImageIcon(origFile.getPath());
@@ -58,7 +59,8 @@ public class FenetreJeu extends JFrame {
         monPanelDessin.addMouseListener(ecoutPremierMalade);
 
         zoneDeLegende.add(legende, BorderLayout.NORTH);
-        zoneDeLegende.add(pBMalades, BorderLayout.CENTER);
+        zoneDeLegende.add(pBMalades, BorderLayout.SOUTH);
+        zoneDeLegende.add(evenement, BorderLayout.CENTER);
 
         cadrePrincipal.add(monPanelDessin, BorderLayout.CENTER);
         cadrePrincipal.add(panelDeCommande, BorderLayout.NORTH);
@@ -138,18 +140,30 @@ public class FenetreJeu extends JFrame {
 	public void setEvenement(){
 
 		//comme timer est dans plateau
-		if(monPlateau.timer==1){
+
+
+                if(monPlateau.timer==2){
 			evenement.setText("Pour fêter l'arrivée des primo-rentrants, certains partent au WEI !");
 		}
-		if(monPlateau.timer==15){
+                else if(monPlateau.timer==15){
 			evenement.setText("Pour décompresser de la semaine de DS, les Etudiants participent aux post-partiels !");
+
 		}
-		if(monPlateau.timer==28){
+                else if(monPlateau.timer>16&&monPlateau.timer<24){
+			evenement.setText("Les Sport'Et partent aux championnats ! ils ont plus de risque de se blesser et de tomber malades");
+		}
+                else if(monPlateau.timer==28){
 			evenement.setText("Le beau temps, l'air printanier..C'est l'heure des 24H !");
 		}
-		if(monPlateau.timer==30){
+                else if(monPlateau.timer==30){
 			evenement.setText("C'est la fin d'année, c'est les Post-partiels de Juin !!");
 		}
+                else if(monPlateau.timer==38){
+			evenement.setText("C'est bientôt la fin ! Etait-ce trop ambitieux ?!");
+		}
+                else{
+                    evenement.setText("");
+                }
 
 	}
 

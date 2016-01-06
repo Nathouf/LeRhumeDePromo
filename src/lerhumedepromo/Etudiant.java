@@ -6,7 +6,7 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
 
     public boolean etat;
     public boolean incubation;
-    private int filiere;
+    public int filiere;
     private int fragilite;
     private int sociabilite;
     private boolean wei;
@@ -80,7 +80,7 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
         if ((2*C1 + C2 + C3 + C4 + 3*C5) >= 9) {
             this.incubation = true;
         }
-     
+
     }
 
     public void lesSymptomesApparaissent() {//sert au premier balayage du tableau, pour que tous les incubés deviennent malades,
@@ -88,6 +88,7 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
         if (incubation) {
             etat = true;
             incubation = false;
+
         }
     }
     }

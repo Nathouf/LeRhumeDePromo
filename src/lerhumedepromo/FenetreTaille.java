@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lerhumedepromo;
 
 import javax.swing.*;//utilisation de Widgets
 import java.awt.*; // Utilisation d'habillages
-import java.awt.event.*;
 
 public class FenetreTaille extends JFrame {
 
@@ -21,7 +15,6 @@ public class FenetreTaille extends JFrame {
 
     public FenetreTaille() {
         super("Taille de plateau");
-
         //Instanciations
         largeur = new JTextField("", 4);
         longueur = new JTextField("", 4);
@@ -30,8 +23,6 @@ public class FenetreTaille extends JFrame {
         nombreEtudiantsVertical = new JLabel("Nombre étudiants par ligne (min 3)");
         messageErreur = new JLabel();
         creerPlateau = new JButton("Créer");
-        //ecouteurs
-
         creerPlateau.addActionListener(new EcouteurTaille(this));
         JPanel cadrePrincipal = new JPanel();
         JPanel tableauCommande = new JPanel();
@@ -41,18 +32,14 @@ public class FenetreTaille extends JFrame {
         caseX.add(largeur);
         caseY.add(nombreEtudiantsHorizontal);
         caseY.add(longueur);
-
         cadrePrincipal.setLayout(new BorderLayout());
         tableauCommande.setLayout(new BorderLayout());
-
         tableauCommande.add(creerPlateau, BorderLayout.SOUTH);
         tableauCommande.add(caseX, BorderLayout.NORTH);
         tableauCommande.add(caseY, BorderLayout.CENTER);
-
         cadrePrincipal.add(consigne, BorderLayout.NORTH);
         cadrePrincipal.add(tableauCommande, BorderLayout.CENTER);
         cadrePrincipal.add(messageErreur, BorderLayout.SOUTH);
-
         setContentPane(cadrePrincipal);
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -86,6 +73,5 @@ public class FenetreTaille extends JFrame {
 
     public void setLabelErreur() {
         messageErreur.setText("Veuillez rentrer quelque chose de valide");
-
     }
 }

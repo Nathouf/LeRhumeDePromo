@@ -1,4 +1,3 @@
-
 package lerhumedepromo;
 
 import javax.swing.*;
@@ -7,7 +6,6 @@ import java.awt.event.*;
 import java.io.File;
 import javax.swing.ImageIcon;
 //inutile d'importer les sous fichiers de Java swing comme ProgressBar
-
 
 public class FenetreJeu extends JFrame {
 
@@ -39,31 +37,29 @@ public class FenetreJeu extends JFrame {
 
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Image image = toolkit.getImage("C:\\Users\\Nath\\Documents\\INSA\\Eurinsa 2\\Info\\Projet\\RhumeDePromo\\LeRhumeDePromo\\src\\lerhumedepromo\\seringue.png");
-        Cursor c = toolkit.createCustomCursor(image , new Point(monPanelDessin.getX(),
-           monPanelDessin.getY()), "img");
-        monPanelDessin.setCursor (c);
+        Cursor c = toolkit.createCustomCursor(image, new Point(monPanelDessin.getX(),
+                monPanelDessin.getY()), "img");
+        monPanelDessin.setCursor(c);
 
         consignePremierMalade = new JLabel("Cliquez sur le premier étudiant à infecter");
         panelDeCommande.add(consignePremierMalade);
         ecoutPremierMalade = new EcouteurPremierMalade(this);
-        pBMalades= new JProgressBar(0, monPlateau.tabEtudiant[0].length*monPlateau.tabEtudiant.length);
+        pBMalades = new JProgressBar(0, monPlateau.tabEtudiant[0].length * monPlateau.tabEtudiant.length);
         pBMalades.setForeground(Color.decode("0xdd1f1f"));
         pBMalades.setBackground(Color.GREEN);
         pBMalades.setStringPainted(true);
         pBMalades.setString("Infectés");
         labelTimer = new JLabel("Semaine 1");
         passerTour = new JButton("Passer tour");
-        evenement=new JLabel();
-        zoneDeLegende.setPreferredSize(new Dimension(200,monPanelDessin.getHeight()));
+        evenement = new JLabel();
+        zoneDeLegende.setPreferredSize(new Dimension(200, monPanelDessin.getHeight()));
         File origFile = new File("C:\\Users\\Nath\\Documents\\INSA\\Eurinsa 2\\Info\\Projet\\RhumeDePromo\\LeRhumeDePromo\\src\\lerhumedepromo\\legende.png");
         ImageIcon icon = new ImageIcon(origFile.getPath());
 
         legende = new JLabel(icon);
-                legende.setText("Légende");
-                legende.setHorizontalTextPosition(JLabel.CENTER);
-                legende.setVerticalTextPosition(JLabel.TOP);
-
-
+        legende.setText("Légende");
+        legende.setHorizontalTextPosition(JLabel.CENTER);
+        legende.setVerticalTextPosition(JLabel.TOP);
 
         monPanelDessin.addMouseListener(ecoutPremierMalade);
 
@@ -100,10 +96,8 @@ public class FenetreJeu extends JFrame {
 
     public void actualiserTour() {
         monPlateau.leTour();
-         pBMalades.setValue(monPlateau.compteurMalades());//actualisation de la barre de Progrès
+        pBMalades.setValue(monPlateau.compteurMalades());//actualisation de la barre de Progrès
     }
-
-
 
     public void DepartJeu() {//On entre dans la phase de jeu tout par tour
         //    cadrePrincipal.add(passerTour,BorderLayout.SOUTH);
@@ -120,7 +114,7 @@ public class FenetreJeu extends JFrame {
     public void ecranFinPartieWin() {//les actions à faire quand le joueur a gagné, utilisé dans ecouteurTour
         cadrePrincipal.remove(monPanelDessin);
         cadrePrincipal.remove(zoneDeLegende);
-                panelDeCommande.remove(passerTour);
+        panelDeCommande.remove(passerTour);
         panelDeCommande.remove(labelTimer);
 
         for (ActionListener act : passerTour.getActionListeners()) { //On doit passer par ca par l'action listener de passer tour est anonyme
@@ -132,7 +126,8 @@ public class FenetreJeu extends JFrame {
 
         cadrePrincipal.add(messageWin, BorderLayout.CENTER);
     }
-     public void ecranFinPartieLose() {//les actions à faire au cas où le joueur a perdu, utilisé dans ecouteurTour
+
+    public void ecranFinPartieLose() {//les actions à faire au cas où le joueur a perdu, utilisé dans ecouteurTour
         cadrePrincipal.remove(monPanelDessin);
         cadrePrincipal.remove(zoneDeLegende);
         panelDeCommande.remove(passerTour);
@@ -147,39 +142,31 @@ public class FenetreJeu extends JFrame {
         cadrePrincipal.add(messageWin, BorderLayout.CENTER);
         //AJOUTER UN MESSAGE / ANIMATION
     }
+
     public void afficherFenetre() {
         setVisible(true);
     }
 
-
-	public void setEvenement(){
+    public void setEvenement() {
 
 		//comme timer est dans plateau
+        if (monPlateau.timer == 2) {
+            evenement.setText("<html> Pour fêter l'arrivée <br> des primo-rentrants,<br>  certains partent au WEI ! </html>");
+        } else if (monPlateau.timer == 15) {
+            evenement.setText("<html>Pour décompresser<br> de la semaine de DS,<br> les Etudiants participent <br>aux post-partiels ! </html>");
 
+        } else if (monPlateau.timer > 24 && monPlateau.timer < 27) {
+            evenement.setText("<html>Les Sport'Et partent <br> aux championnats ! ils ont plus de risque de se blesser et<br> de tomber malades </html>");
+        } else if (monPlateau.timer == 28) {
+            evenement.setText("<html>Le beau temps, <br>l'air printanier..<br>C'est l'heure des 24H ! </html>");
+        } else if (monPlateau.timer == 30) {
+            evenement.setText("<html>C'est la fin d'année,<br> c'est les Post-partiels <br>de Juin !! </html>");
+        } else if (monPlateau.timer == 38) {
+            evenement.setText("<html>C'est bientôt la fin ! <br>Etait-ce trop ambitieux ?! </html>");
+        } else {
+            evenement.setText("");
+        }
 
-                if(monPlateau.timer==2){
-			evenement.setText("<html> Pour fêter l'arrivée <br> des primo-rentrants,<br>  certains partent au WEI ! </html>");
-		}
-                else if(monPlateau.timer==15){
-			evenement.setText("<html>Pour décompresser<br> de la semaine de DS,<br> les Etudiants participent <br>aux post-partiels ! </html>");
-
-		}
-                else if(monPlateau.timer>24&&monPlateau.timer<27){
-			evenement.setText("<html>Les Sport'Et partent <br> aux championnats ! ils ont plus de risque de se blesser et<br> de tomber malades </html>");
-		}
-                else if(monPlateau.timer==28){
-			evenement.setText("<html>Le beau temps, <br>l'air printanier..<br>C'est l'heure des 24H ! </html>");
-		}
-                else if(monPlateau.timer==30){
-			evenement.setText("<html>C'est la fin d'année,<br> c'est les Post-partiels <br>de Juin !! </html>");
-		}
-                else if(monPlateau.timer==38){
-			evenement.setText("<html>C'est bientôt la fin ! <br>Etait-ce trop ambitieux ?! </html>");
-		}
-                else{
-                    evenement.setText("");
-                }
-
-	}
+    }
 
 }

@@ -1,6 +1,5 @@
 package lerhumedepromo;
 
-
 public class Etudiant {//certains attributs devront peut etre mis en public pour que le programme fonctionne
     //Cela permet de ne pas mettre plein de setters
 
@@ -48,17 +47,16 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
     }
 
     public void setIncubation(int nbVoisins, int timer) {
-      	int C1 = fragilite + sociabilite;
+        int C1 = fragilite + sociabilite;
         int C2 = 0; //les constantes C2,C3,C4 vont augmenter si l'etudiant participe aux differnts evenements
         int C3 = 0;
         int C4 = 0;
         int C5 = 0;//pas forcement nécessaire mais plus clair = C5 correspond au nombre voisins
-        int C6=0;
+        int C6 = 0;
 
         if (this.wei && timer == 1) { //si l'etudiant participe au wei et qu'on est en période de wei (semaine 2)
             C2 = 8; //l'etudiant a plus de rique d'imcuber la maladie
         }
-
         if (this.ppJanvier && timer == 15) { //si l'etudiant participe au ppJanvier et qu'on est en periode de ppJanvier (semaine 15)
             C3 = 8; //l'etudiant a plus de rique d'imcuber la maladie
         }
@@ -77,14 +75,12 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
         if (nbVoisins == 4) {
             C5 = 4;
         }
-        if(filiere==4){
-            C6=2;//nerf un peu les Sport Et
+        if (filiere == 4) {
+            C6 = 2;//nerf un peu les Sport Et
         }
-
-        if ((2*C1 + C2 + C3 + C4 + 3*C5) >= 6) {
+        if ((2 * C1 + C2 + C3 + C4 + 3 * C5) >= 6) {
             this.incubation = true;
         }
-
     }
 
     public void lesSymptomesApparaissent() {//sert au premier balayage du tableau, pour que tous les incubés deviennent malades,
@@ -92,7 +88,6 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
         if (incubation) {
             etat = true;
             incubation = false;
-
         }
     }
-    }
+}

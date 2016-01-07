@@ -1,4 +1,3 @@
-package lerhumedepromo;
 
 public class Amerinsa extends Etudiant {
 

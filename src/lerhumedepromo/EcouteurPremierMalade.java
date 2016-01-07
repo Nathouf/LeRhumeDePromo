@@ -1,5 +1,3 @@
-package lerhumedepromo;
-
 
 import java.awt.event.*;
 

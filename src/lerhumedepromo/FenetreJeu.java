@@ -38,9 +38,9 @@ public class FenetreJeu extends JFrame {
         panelDeCommande.setBackground(Color.decode("0xD1DDD3"));
 
         Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Image image = toolkit.getImage("icons/handwriting.gif");
+        Image image = toolkit.getImage("C:\\Users\\Nath\\Documents\\INSA\\Eurinsa 2\\Info\\Projet\\RhumeDePromo\\LeRhumeDePromo\\src\\lerhumedepromo\\seringue.png");
         Cursor c = toolkit.createCustomCursor(image , new Point(monPanelDessin.getX(),
-         monPanelDessin.getY()), "img");
+           monPanelDessin.getY()), "img");
         monPanelDessin.setCursor (c);
 
         consignePremierMalade = new JLabel("Cliquez sur le premier étudiant à infecter");

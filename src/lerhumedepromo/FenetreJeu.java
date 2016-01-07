@@ -6,8 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import javax.swing.ImageIcon;
-import javax.swing.text.StyleConstants;
-
+//inutile d'importer les sous fichiers de Java swing comme ProgressBar
 
 
 public class FenetreJeu extends JFrame {
@@ -35,18 +34,28 @@ public class FenetreJeu extends JFrame {
         this.nombreIconesy = nbreIconesy;  //nombre de lignes
         monPlateau = plateau;
         monPanelDessin = new MonPanelDessin(this);
+        zoneDeLegende.setBackground(Color.decode("0xD1DDD3"));
+        panelDeCommande.setBackground(Color.decode("0xD1DDD3"));
+
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Image image = toolkit.getImage("icons/handwriting.gif");
+        Cursor c = toolkit.createCustomCursor(image , new Point(monPanelDessin.getX(),
+         monPanelDessin.getY()), "img");
+        monPanelDessin.setCursor (c);
 
         consignePremierMalade = new JLabel("Cliquez sur le premier étudiant à infecter");
         panelDeCommande.add(consignePremierMalade);
         ecoutPremierMalade = new EcouteurPremierMalade(this);
         pBMalades= new JProgressBar(0, monPlateau.tabEtudiant[0].length*monPlateau.tabEtudiant.length);
-        pBMalades.setForeground(Color.RED);
+        pBMalades.setForeground(Color.decode("0xdd1f1f"));
         pBMalades.setBackground(Color.GREEN);
+        pBMalades.setStringPainted(true);
+        pBMalades.setString("Infectés");
         labelTimer = new JLabel("Semaine 1");
         passerTour = new JButton("Passer tour");
         evenement=new JLabel();
         zoneDeLegende.setPreferredSize(new Dimension(200,monPanelDessin.getHeight()));
-        File origFile = new File("C:\\Users\\Nath\\Desktop\\laplusbelle.jpg");
+        File origFile = new File("C:\\Users\\Nath\\Documents\\INSA\\Eurinsa 2\\Info\\Projet\\RhumeDePromo\\LeRhumeDePromo\\src\\lerhumedepromo\\legende.png");
         ImageIcon icon = new ImageIcon(origFile.getPath());
 
         legende = new JLabel(icon);
@@ -111,6 +120,9 @@ public class FenetreJeu extends JFrame {
     public void ecranFinPartieWin() {//les actions à faire quand le joueur a gagné, utilisé dans ecouteurTour
         cadrePrincipal.remove(monPanelDessin);
         cadrePrincipal.remove(zoneDeLegende);
+                panelDeCommande.remove(passerTour);
+        panelDeCommande.remove(labelTimer);
+
         for (ActionListener act : passerTour.getActionListeners()) { //On doit passer par ca par l'action listener de passer tour est anonyme
             passerTour.removeActionListener(act);
         }
@@ -123,6 +135,9 @@ public class FenetreJeu extends JFrame {
      public void ecranFinPartieLose() {//les actions à faire au cas où le joueur a perdu, utilisé dans ecouteurTour
         cadrePrincipal.remove(monPanelDessin);
         cadrePrincipal.remove(zoneDeLegende);
+        panelDeCommande.remove(passerTour);
+        panelDeCommande.remove(labelTimer);
+
         for (ActionListener act : passerTour.getActionListeners()) { //On doit passer par ca par l'action listener de passer tour est anonyme
             passerTour.removeActionListener(act);
         }
@@ -149,7 +164,7 @@ public class FenetreJeu extends JFrame {
 			evenement.setText("<html>Pour décompresser<br> de la semaine de DS,<br> les Etudiants participent <br>aux post-partiels ! </html>");
 
 		}
-                else if(monPlateau.timer>16&&monPlateau.timer<24){
+                else if(monPlateau.timer>24&&monPlateau.timer<27){
 			evenement.setText("<html>Les Sport'Et partent <br> aux championnats ! ils ont plus de risque de se blesser et<br> de tomber malades </html>");
 		}
                 else if(monPlateau.timer==28){

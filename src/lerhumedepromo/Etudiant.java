@@ -52,7 +52,8 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
         int C2 = 0; //les constantes C2,C3,C4 vont augmenter si l'etudiant participe aux differnts evenements
         int C3 = 0;
         int C4 = 0;
-        int C5 = 0; //par forcement nécessaire mais plus clair = C5 correspond au nombre voisins
+        int C5 = 0;//pas forcement nécessaire mais plus clair = C5 correspond au nombre voisins
+        int C6=0;
 
         if (this.wei && timer == 1) { //si l'etudiant participe au wei et qu'on est en période de wei (semaine 2)
             C2 = 8; //l'etudiant a plus de rique d'imcuber la maladie
@@ -76,8 +77,11 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
         if (nbVoisins == 4) {
             C5 = 4;
         }
+        if(filiere==4){
+            C6=2;//nerf un peu les Sport Et
+        }
 
-        if ((2*C1 + C2 + C3 + C4 + 3*C5) >= 9) {
+        if ((2*C1 + C2 + C3 + C4 + 3*C5) >= 6) {
             this.incubation = true;
         }
 

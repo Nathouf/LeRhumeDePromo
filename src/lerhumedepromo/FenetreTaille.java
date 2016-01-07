@@ -5,7 +5,7 @@
  */
 package lerhumedepromo;
 
-import javax.swing.*;//utilisation de Widgets 
+import javax.swing.*;//utilisation de Widgets
 import java.awt.*; // Utilisation d'habillages
 import java.awt.event.*;
 
@@ -22,16 +22,16 @@ public class FenetreTaille extends JFrame {
     public FenetreTaille() {
         super("Taille de plateau");
 
-        //Instanciations 
+        //Instanciations
         largeur = new JTextField("", 4);
         longueur = new JTextField("", 4);
         consigne = new JLabel("Sélectionner une taille de plateau");
-        nombreEtudiantsHorizontal = new JLabel("Nombre étudiants par colonne (min 2)");
-        nombreEtudiantsVertical = new JLabel("Nombre étudiants par ligne (min 2)");
+        nombreEtudiantsHorizontal = new JLabel("Nombre étudiants par colonne (min 3)");
+        nombreEtudiantsVertical = new JLabel("Nombre étudiants par ligne (min 3)");
         messageErreur = new JLabel();
         creerPlateau = new JButton("Créer");
         //ecouteurs
-        
+
         creerPlateau.addActionListener(new EcouteurTaille(this));
         JPanel cadrePrincipal = new JPanel();
         JPanel tableauCommande = new JPanel();
@@ -44,7 +44,7 @@ public class FenetreTaille extends JFrame {
 
         cadrePrincipal.setLayout(new BorderLayout());
         tableauCommande.setLayout(new BorderLayout());
-        
+
         tableauCommande.add(creerPlateau, BorderLayout.SOUTH);
         tableauCommande.add(caseX, BorderLayout.NORTH);
         tableauCommande.add(caseY, BorderLayout.CENTER);
@@ -52,7 +52,7 @@ public class FenetreTaille extends JFrame {
         cadrePrincipal.add(consigne, BorderLayout.NORTH);
         cadrePrincipal.add(tableauCommande, BorderLayout.CENTER);
         cadrePrincipal.add(messageErreur, BorderLayout.SOUTH);
-        
+
         setContentPane(cadrePrincipal);
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,7 +65,7 @@ public class FenetreTaille extends JFrame {
         try {
             x = Integer.parseInt(longueur.getText());
         } catch (Exception e) {
-            x = -1; //symbolise l'erreur	
+            x = -1; //symbolise l'erreur
         }
         return x;
     }
@@ -75,7 +75,7 @@ public class FenetreTaille extends JFrame {
         try {
             y = Integer.parseInt(largeur.getText());
         } catch (Exception e) {
-            y = -1; //symbolise l'erreur	
+            y = -1; //symbolise l'erreur
         }
         return y;
     }

@@ -1,4 +1,3 @@
-package lerhumedepromo;
 
 import javax.swing.*;//utilisation de Widgets
 import java.awt.*; // Utilisation d'habillages

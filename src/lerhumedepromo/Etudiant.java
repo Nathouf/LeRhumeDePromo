@@ -1,4 +1,3 @@
-package lerhumedepromo;
 
 public class Etudiant {//certains attributs devront peut etre mis en public pour que le programme fonctionne
     //Cela permet de ne pas mettre plein de setters

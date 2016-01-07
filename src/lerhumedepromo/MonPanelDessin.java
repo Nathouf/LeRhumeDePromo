@@ -1,4 +1,3 @@
-package lerhumedepromo;
 
 import javax.swing.*;
 import java.awt.*;

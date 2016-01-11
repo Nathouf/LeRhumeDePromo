@@ -1,17 +1,16 @@
 
-public class Etudiant {//certains attributs devront peut etre mis en public pour que le programme fonctionne
-    //Cela permet de ne pas mettre plein de setters
-
+public class Etudiant {
     public boolean etat;
     public boolean incubation;
     public int filiere;
     private int fragilite;
     private int sociabilite;
+    
+    //evenements de l'année
     private boolean wei;
     private boolean ppJanvier;
     private boolean vingtQuatreHeures;
-    private int timer;//pour utiliser dans les filières
-    //constucteur
+    private int timer;
 
     public Etudiant(int filiere, int fragilite, int sociabilité, boolean wei, boolean ppJanvier, boolean vingtQuatreHeures) {
         this.etat = false;
@@ -33,11 +32,11 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
         }
     }
 
-    public boolean getEtat() {//pour donner l'etat pour utiliser dans paint component
+    public boolean getEtat() {//récupere l'état pour l'utiliser dans paint component
         return etat;
     }
 
-    public int getFiliere() {//nous donne int de filière pour utiliser dans paint component pour créer les couleurs
+    public int getFiliere() {//donne les filières sous forme de int : nécéssaire pour créer les couleurs dans paint component
         return filiere;
     }
 
@@ -54,13 +53,13 @@ public class Etudiant {//certains attributs devront peut etre mis en public pour
         int C6 = 0;
 
         if (this.wei && timer == 1) { //si l'etudiant participe au wei et qu'on est en période de wei (semaine 2)
-            C2 = 8; //l'etudiant a plus de rique d'imcuber la maladie
+            C2 = 8; //l'etudiant a plus de riques d'imcuber la maladie
         }
         if (this.ppJanvier && timer == 15) { //si l'etudiant participe au ppJanvier et qu'on est en periode de ppJanvier (semaine 15)
-            C3 = 8; //l'etudiant a plus de rique d'imcuber la maladie
+            C3 = 8; //l'etudiant a plus de riques d'imcuber la maladie
         }
         if (this.vingtQuatreHeures && timer == 28) { //si l'etudiant participe au 24h et qu'on est en période de 24h (semaine 28)
-            C4 = 8; //l'etudiant a plus de rique d'imcuber la maladie
+            C4 = 8; //l'etudiant a plus de riques d'imcuber la maladie
         }
         if (nbVoisins <= 1) {
             //ne rien faire juste ici pour montrer que cas pris en compte

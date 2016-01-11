@@ -4,6 +4,7 @@ public class ZiqEt extends Etudiant {
     private boolean weiZiqEt;
 
     public ZiqEt() {
+        //attributs de la filière
         super(6, 5, 2, false, true, true);
         weiZiqEt = false;
     }

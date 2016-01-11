@@ -81,8 +81,7 @@ public class Etudiant {
         }
     }
 
-    public void lesSymptomesApparaissent() {//sert au premier balayage du tableau, pour que tous les incubés deviennent malades,
-        //PUIS que l'on traite les nouveaux cas
+    public void lesSymptomesApparaissent() {//tous les étudiants qui étaient sous incubation deviennent malade
         if (incubation) {
             etat = true;
             incubation = false;

@@ -35,7 +35,7 @@ public class FenetreJeu extends JFrame {
         panelDeCommande.setBackground(Color.decode("0xD1DDD3"));
 
         Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Image image = toolkit.getImage("./src/lerhumedepromo/seringue.png");
+        Image image = toolkit.getImage("seringue.png");
         Cursor c = toolkit.createCustomCursor(image, new Point(monPanelDessin.getX(),
                 monPanelDessin.getY()), "img");
         monPanelDessin.setCursor(c);
@@ -52,7 +52,7 @@ public class FenetreJeu extends JFrame {
         passerTour = new JButton("Passer tour");
         evenement = new JLabel();
         zoneDeLegende.setPreferredSize(new Dimension(200, monPanelDessin.getHeight()));
-        File origFile = new File( "./src/lerhumedepromo/legende.png");
+        File origFile = new File( "legende.png");
         ImageIcon icon = new ImageIcon(origFile.getPath());
 
         legende = new JLabel(icon);
